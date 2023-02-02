@@ -11,9 +11,14 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
   </head>
     <header>
+    <div class="container">
       <ul class="nav justify-content-end">
         <li class="nav-item">
           <a class="nav-link" href="#">Visited</a>
@@ -22,18 +27,19 @@
           <a class="nav-link" href="#">Wish List</a>
         </li>
       </ul>
+    </div>
     </header>
 
   <body>
     <!-- Hero and search input // Left side of large screen -->
     <div class="container hero">
-        <div class="jumbotron jumbotron-fluid">
+        <div class="jumbotron">
             <div class="container">
-              <h1 class="display-4">Country Info Finder</h1>
+              <h1 class="display-4 jumbotron-title">Country Info Finder</h1>
               <p class="lead">Search a country name below, or click on a link above to see your previously stored lists.</p>
               <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2" type="search" placeholder="Enter country" aria-label="Search">
+                <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
               </form>
             </div>
         </div>

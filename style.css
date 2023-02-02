@@ -1,0 +1,13 @@
+
+.jumbotron{
+    background-color: rgb(255, 255, 255);
+}
+
+.jumbotron-title{
+    font-family: 'Fjalla One', sans-serif;
+    color: rgb(55, 63, 83);
+}
+
+.lead{
+    color: rgb(55, 63, 83);
+}
