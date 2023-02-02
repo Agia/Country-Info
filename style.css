@@ -6,8 +6,10 @@
 /* STYLES */
 
 #hero-search {
+    margin-top: 20vh;
     background-color: white;
     padding: 2rem;
+    padding-left: 4rem;
 }
 
 
