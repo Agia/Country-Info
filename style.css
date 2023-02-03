@@ -1,6 +1,6 @@
 /* FONTS */
 /* Font(s) currently using for testing (Alyssa) - Can confirm final fonts / design decisions together later */
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Montserrat:wght@400;700&display=swap');
 
 /* VARIABLES */
 
@@ -9,6 +9,7 @@
     /* COLOURS */
     --dark: #242424;
     --light: #fbfbfb;
+    --color: rgb(44, 227, 123);
     /* FONTS */
     --heading: "Fjalla One";
     --body: "Montserrat"
@@ -17,6 +18,8 @@
 /* STYLES */
 body {
   font-family: var(--body);
+  background-color: var(--light);
+  color: var(--dark);
 }
 
 /* Hero area, including search input / button, header and intro text */
@@ -27,10 +30,30 @@ body {
     padding-left: 4rem;
 }
 
+/* Search button */
+#button-search {
+    background-color: var(--color);
+    font-family: var(--heading);
+    color: var(--light);
+    text-transform: uppercase;
+}
+
 
 /* Space for Nav Styles */
 
 
+
+/* Title for phrases list */
+#phrase-title {
+    font-family: var(--heading);
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    border-bottom: 10px var(--color) solid;
+    /* margin-bottom: 0; */
+    padding: 0;
+    height: 2rem;
+}
 
 /* <li> items in the list containing translated phrases */
 .phrase-item {
