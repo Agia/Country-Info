@@ -1,0 +1,70 @@
+/* FONTS */
+/* Font(s) currently using for testing (Alyssa) - Can confirm final fonts / design decisions together later */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+/* VARIABLES */
+
+/* Added some variables to help with using the same colours, etc., and for my use. Feel free to use them or not (Alyssa) */
+:root {
+    /* COLOURS */
+    --dark: #242424;
+    --light: #fbfbfb;
+    /* FONTS */
+    --heading: "Fjalla One";
+    --body: "Montserrat"
+}
+
+/* STYLES */
+body {
+  font-family: var(--body);
+}
+
+/* Hero area, including search input / button, header and intro text */
+#hero-search {
+    margin-top: 20vh;
+    background-color: var(--light);
+    padding: 2rem;
+    padding-left: 4rem;
+}
+
+
+/* Space for Nav Styles */
+
+
+
+/* <li> items in the list containing translated phrases */
+.phrase-item {
+    margin: 0;
+    list-style: none;
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin-bottom: 0.7rem;
+    background: var(--light);
+    color: var(--dark);
+    border: 3px var(--dark) solid;
+    max-width: 200px;
+    height: 5.8rem;
+}
+
+/* Targetting the even children of the phrases list */
+.phrase-item:nth-of-type(even) {
+  text-align: right;
+}
+
+/* <h4>'s containing translated word/phrase when returned */
+.translated {
+  padding-bottom: 4px;
+  margin: 0;
+  font-weight: 700;
+}
+
+/* <p> for English translation words */
+.en-phrase {
+  font-size: .9rem; 
+  line-height: 1.4rem;
+  margin: 0;
+}
+
+
+
+/* MEDIA QUERIES */
