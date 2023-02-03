@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <!--Search box and navigation-->
+  <!--Navigation-->
 
   <header>
     <div class="container">
@@ -33,12 +33,11 @@
     <div class="row">
       <!-- Hero and search input // Left side of large screen -->
       <div
-        class="container jumbotron jumbotron-fluid icol-sm col-md-6"
-        id="hero-search"
-      >
-        <div class="container">
-          <h1 class="display-4">Country Finder</h1>
-          <p class="lead">
+        class="container jumbotron jumbotron-fluid col-sm col-md-5"
+        id="hero-search">
+        <!-- <div class="container"> -->
+          <h1 class="display-4">Country Info</h1>
+          <p id="intro-text">
             Search a country name for useful information about it. Or use the
             menu above to display your wish list and previously visited
             countries.
@@ -58,11 +57,12 @@
               </button>
             </div>
           </div>
-        </div>
+        <!-- </div> -->
       </div>
 
       <!-- Container for right side elements (country info) at larger screen sizes -->
-      <div class="col-md-6">
+      <div class="col-md-7" id="info-container">
+        
         <!--Country information, including phrases / local expressions -->
         <div class="container">
           <!-- Content and structure for country info -->
@@ -71,7 +71,7 @@
           <div class="container col-md 6" id="phrases">
             <ul>
                 <li class="phrase-item" id="phrase-title">
-                    <h4 class="translated" >Phrases</h4>
+                    <h4 class="translated">Phrases</h4>
                   </li>
               <li class="phrase-item">
                     <h4 class="translated" id="hello">Bonjour</h4>

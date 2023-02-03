@@ -23,7 +23,7 @@ let translatedPhraseThree;
 // Temporary variable for testing translate API output
 let countryData;
 
-// Does a fetch request to translate API with our variables as parameters and renders content to Phrases area of page
+// Does a fetch request to translate API with fixed, and generated, variables as parameters and renders content to 'Phrases' area of page
 function getTranslations (phrase) {
     
     // Call to translate API using phraseOne
@@ -46,9 +46,9 @@ function getTranslations (phrase) {
         .then(response => response.json())
         .then((input) => {
 
+            // ? TODO: Remove console.logs when no longer used for testing (Alyssa)
             if (phrase === phraseOne) {
                 translatedPhraseOne = input.data.translatedText;
-                // Console log for testing
                 // console.log(translatedPhraseOne);
             } else if (phrase === phraseTwo) {
                 translatedPhraseTwo = input.data.translatedText;
@@ -61,4 +61,5 @@ function getTranslations (phrase) {
             }
         })
         .catch(err => console.error(err));
+
 }

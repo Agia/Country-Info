@@ -24,24 +24,50 @@ body {
 
 /* Hero area, including search input / button, header and intro text */
 #hero-search {
-    margin-top: 20vh;
+    margin: auto auto;
     background-color: var(--light);
     padding: 2rem;
     padding-left: 4rem;
+    max-width: 90%;
+}
+
+h1 {
+/* font-family: var(--heading); */
+  font-size: 1.7rem;
+}
+
+/* Intro paragraph */
+#intro-text {
+  max-width: 90%;
+}
+
+/* Search input */
+#search {
+  max-width: 70%;
+}
+
+#search:focus {
+  border: 2px var(--color) solid;
 }
 
 /* Search button */
 #button-search {
-    background-color: var(--color);
-    font-family: var(--heading);
-    color: var(--light);
-    text-transform: uppercase;
+  background-color: var(--color);
+  font-family: var(--body);
+  font-weight: 700;
+  /* border: none; */
 }
 
 
 /* Space for Nav Styles */
 
 
+
+/* Right side container, on large screens */
+
+#info-container {
+  margin-top: 7vh;
+}
 
 /* Title for phrases list */
 #phrase-title {
@@ -50,7 +76,6 @@ body {
     text-align: center;
     border: none;
     border-bottom: 10px var(--color) solid;
-    /* margin-bottom: 0; */
     padding: 0;
     height: 2rem;
 }
@@ -91,3 +116,9 @@ body {
 
 
 /* MEDIA QUERIES */
+@media screen and (max-width: 768px) {
+  /* Initial values, will finalise, and add others, when HTML structure is complete */
+  #hero-search {
+    text-align: center;
+  }
+}
