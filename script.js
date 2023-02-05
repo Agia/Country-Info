@@ -9,22 +9,20 @@
 //     });
 
 
-// Variable to store the country alpha2 code, from Country API. Hardcoded in the meantime for testing
-let countryAlphaCode = "fr";
+// Variable to store the country alpha2 code, from Country API. Hardcoded for testing, until CountryAPI code is implemented
+let countryAlphaCode = "es";
 
 // Variables to store English phrases
 const phraseOne = "Hello";
 const phraseTwo = "Goodbye";
 const phraseThree = "Thank you";
-// Variables to store the translated phrases (will move to local scope when done with testing)
-let translatedPhraseOne;
-let translatedPhraseTwo;
-let translatedPhraseThree;
-// Temporary variable for testing translate API output
-let countryData;
 
 // Does a fetch request to translate API with fixed, and generated, variables as parameters and renders content to 'Phrases' area of page
 function getTranslations (phrase) {
+    // Variables to store the translated phrases
+    let translatedPhraseOne;
+    let translatedPhraseTwo;
+    let translatedPhraseThree;
     
     // Call to translate API using phraseOne
     const encodedParams = new URLSearchParams();
@@ -46,16 +44,24 @@ function getTranslations (phrase) {
         .then(response => response.json())
         .then((input) => {
 
-            // ? TODO: Remove console.logs when no longer used for testing (Alyssa)
+            // Local variables to store HTML elements changed via the function
+            let phraseOneElement = document.querySelector("#phrase-one");
+            let phraseTwoElement = document.querySelector("#phrase-two");
+            let phraseThreeElement = document.querySelector("#phrase-three");
+
+            // Compares passed parameter to global values, saves the relavant data and changes the associated HTML element. If not match is found, the function returns;
             if (phrase === phraseOne) {
                 translatedPhraseOne = input.data.translatedText;
-                // console.log(translatedPhraseOne);
+                phraseOneElement.textContent = `${translatedPhraseOne}`;
+
             } else if (phrase === phraseTwo) {
                 translatedPhraseTwo = input.data.translatedText;
-                // console.log(translatedPhraseTwo);
+                phraseTwoElement.textContent = `${translatedPhraseTwo}`;
+
             } else if (phrase === phraseThree) {
                 translatedPhraseThree = input.data.translatedText;
-                // console.log(translatedPhraseThree);
+                phraseThreeElement.textContent = `${translatedPhraseThree}`;
+
             } else {
                 return;
             }
