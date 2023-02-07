@@ -11,11 +11,11 @@
 let modalTitle = document.querySelector("#modal-title");
 let modalList = document.querySelector("#saved-countries");
 let visitedNav = document.querySelector(".visited");
-let wishListNav = document.querySelector(".wishListNav")
+let wishListNav = document.querySelector(".wish-list")
 
 //variables to store saved countries
 let visitedCountries = [];
-let wishList = [];
+let wishList = ["France"];
 
 //on click on Visited navbar item open a list of saved countries
 visitedNav.addEventListener("click", function() {
@@ -24,7 +24,7 @@ visitedNav.addEventListener("click", function() {
     
     if (visitedCountries.length > 0) {
       modalList.textContent = visitedCountries
-      console.log("Hello")
+      console.log("hello");
     }
     // render a message
     else {
