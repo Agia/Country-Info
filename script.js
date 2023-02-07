@@ -76,13 +76,17 @@ function obtainData(data) {
         let populationEL = document.getElementById("population")
         populationEL.textContent = countryData.population
 
-        //Languages
+        //LanguagesList
         let languagesEL = document.getElementById("languages")
         for (const languageCode in countryData.languages) {
             const element = countryData.languages[languageCode]
             console.log(element)
             for (let i = 0; i < 1; i++) {
-                languagesEL.textContent += countryData.languages[languageCode] + ", "
+                if (Object.keys(countryData.languages).length < 2) {
+                    languagesEL.textContent += countryData.languages[languageCode]
+                } else {
+                    languagesEL.textContent += countryData.languages[languageCode] + ", "
+                }
             }
         }
 
@@ -124,18 +128,18 @@ function obtainData(data) {
 
 
 // Does a fetch request to translate API with fixed, and generated, variables as parameters and renders content to 'Phrases' area of page
-function getTranslations (phrase) {
+function getTranslations(phrase) {
     // Variables to store the translated phrases
     let translatedPhraseOne;
     let translatedPhraseTwo;
     let translatedPhraseThree;
-    
+
     // Call to translate API using phraseOne
     const encodedParams = new URLSearchParams();
     encodedParams.append("source_language", "en");
     encodedParams.append("target_language", countryAlphaCode);
     encodedParams.append("text", phrase);
-    
+
     const options = {
         method: 'POST',
         headers: {
@@ -145,7 +149,7 @@ function getTranslations (phrase) {
         },
         body: encodedParams
     };
-    
+
     fetch('https://text-translator2.p.rapidapi.com/translate', options)
     .then(response => response.json())
     .then((input) => {
