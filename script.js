@@ -36,7 +36,6 @@ function obtainData(data) {
                 } else {
                     languagesEL.textContent += countryData.languages[languageCode] + ", "
                 }
-
             }
         }
 
