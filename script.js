@@ -8,6 +8,12 @@
 //         console.log(data)
 //     });
 
+//Opening saved countries
+//on click Visited navbar item open a list of saved countries
+//on click Wish list  navbar item open a list of saved countries
+//Connect the search input with the card rendering 
+//connect the buttons from card rendering with the navbar
+//every time that a country is saved push inside the relative array 
 
 // Variable to store the country alpha2 code, from Country API. Hardcoded for testing, until CountryAPI code is implemented
 let countryAlphaCode = "es";
