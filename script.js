@@ -3,35 +3,52 @@ let country = "Norway";
 // "http://nadir.yabirgb.com/austria.json"
 // "https://countryapi.io/api/name/"+country+"?apikey="
 // "https://countryapi.io/api/all?apikey=YOUR-APIKEY"
-fetch("https://countryapi.io/api/name/"+country+"?apikey=9faUreLJojOnzlUoLLEoVq5QZfM3kHI5UY7kq6xX")
+/* fetch("https://countryapi.io/api/name/" + country + "?apikey=9faUreLJojOnzlUoLLEoVq5QZfM3kHI5UY7kq6xX")
     .then((response) => response.json())
     .then((data) => {
         console.log(data)
         obtainData(data)
-    });
-//console.log(norway)
-//obtainData(norway)
+    }); */
+console.log(norway)
+obtainData(norway)
 
 function obtainData(data) {
     for (const [countryCode, countryData] of Object.entries(data)) {
-        //Key es el atributo, que en este caso seria at (austria), nuestro countryCode y value el valor de ese atributo, el countryData
-        console.log(countryCode)
-        console.log(countryData.capital)
+        //console.log(countryCode)
+        //console.log(countryData.capital)
+
+        //Capital
         let capitalEL = document.getElementById("capital")
         capitalEL.textContent = countryData.capital
+
+        //Population
         let populationEL = document.getElementById("population")
         populationEL.textContent = countryData.population
-        let languagesEL = document.getElementById("languages")
-        for (const property in countryData.languages) {
-            const element = countryData.languages[property]
-            console.log(element)
 
+        //Languages
+        let languagesEL = document.getElementById("languages")
+        for (const languageCode in countryData.languages) {
+            const element = countryData.languages[languageCode]
+            console.log(element)
+            for (let i = 0; i < 1; i++) {
+                languagesEL.textContent += countryData.languages[languageCode] + ", "
+            }
         }
-        languagesEL.textContent = countryData.languages
+
+        //Region
         let regionEL = document.getElementById("region")
         regionEL.textContent = countryData.region
+
+        //Currency
         let currencyEL = document.getElementById("currency")
-        currencyEL.textContent = countryData.currencies
+        for (const currencyCode in countryData.currencies) {
+            const currency = countryData.currencies[currencyCode]
+            console.log(currency.name)
+            currencyEL.textContent += currency.name
+        }
+
+        //Flag
+        let flagEL = document.getElementById("flag")
     }
 };
 
