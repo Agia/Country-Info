@@ -49,7 +49,10 @@ function obtainData(data) {
 
         //Flag
         let flagEL = document.getElementById("flag")
+        flagEL.setAttribute("src", countryData.flag.medium);
+
+        //CountryName
+        let countryNameEL = document.getElementById("countryName")
+        countryNameEL.textContent = countryData.name
     }
 };
-
-//guardar la respuesta en un .json y subirla a github (crear una cuenta nueva por si acaso) y borrarla
