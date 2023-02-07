@@ -5,75 +5,130 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Country Finder</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <!--FontAwesome-->
     <link rel="stylesheet" href="style.css" />
 </head>
+
+<!--Navigation-->
 <header>
-    <header>
+    <div class="container">
         <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Visited</a>
+            <li class="nav-item visited">
+                <a class="nav-link visited" href="#" data-toggle="modal" data-target="#modalCenter" a>Visited</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Wish List</a>
+            <li class="nav-item wish-list">
+                <a class="nav-link wish-list" href="#" data-toggle="modal" data-target="#modalCenter" a>Wish List</a>
             </li>
         </ul>
-    </header>
+    </div>
+
+    <!-- Modal Visited/WishList -->
+    <div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul id="saved-contries"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
 
 <body>
-    <!--Search box and navigation-->
-    <div class="container"></div>
-
     <div class="row">
         <!-- Hero and search input // Left side of large screen -->
-        <div class="container jumbotron jumbotron-fluid icol-sm col-md-6" id="hero-search">
-            <div class="container">
-                <h1 class="display-4">Country Finder</h1>
-                <p class="lead">Search a country name for useful information about it. Or use the menu above to display
-                    your wish list and previously visited countries.</p>
+        <div class="container jumbotron jumbotron-fluid col-sm col-md-5" id="hero-search">
+            <!-- <div class="container"> -->
+            <h1 class="display-4">Country Info</h1>
+            <p id="intro-text">
+                Search a country name for useful information about it. Or use the menu
+                above to display your wish list and previously visited countries.
+            </p>
 
-                <div class="input-group input-group-lg" id="search-input">
-                    <input type="text" class="form-control" id="search" aria-label="Search input"
-                        aria-describedby="Search input">
-                    <div class="input-group-prepend">
-                        <button type="button" class="btn btn-success" id="button-search">Search</button>
+            <div class="input-group input-group-lg" id="search-input">
+                <input type="text" class="form-control" id="search" aria-label="Search input"
+                    aria-describedby="Search input" />
+                <div class="input-group-prepend">
+                    <button type="button" class="btn btn-success" id="button-search">
+                        Search
+                    </button>
+                </div>
+            </div>
+            <!-- </div> -->
+        </div>
+
+        <!-- Container for right side elements (country info) at larger screen sizes -->
+        <div class="col-md-7" id="info-container">
+            <!--Country information, including phrases / local expressions -->
+            <div class="container">
+                <!-- Content and structure for country info -->
+                <div class="container" id="countryCard">
+                    <div id="country">
+                        <h2 id="countryName">Country Name</h2>
+                        <img id="flag" src="" alt="country flag">
+                    </div>
+                    <div id="factsContainer">
+                        <p>Capital:</p>
+                        <p id="capital"></p>
+                        <p>Population:</p>
+                        <p id="population"></p>
+                        <p>Languages:</p>
+                        <p id="languages"></p>
+                        <p>Region:</p>
+                        <p id="region"></p>
+                        <p>Currency:</p>
+                        <p id="currency"></p>
+                    </div>
+                    <!-- Local expressions -->
+                    <div class="container col-md 6" id="phrases">
+                        <ul>
+                            <li class="phrase-item" id="phrase-title">
+                                <h4 class="translated">Phrases</h4>
+                            </li>
+                            <li class="phrase-item">
+                                <h4 class="translated" id="phrase-one">Bonjour</h4>
+                                <p class="en-phrase">Hello</p>
+                            </li>
+                            <li class="phrase-item">
+                                <h4 class="translated" id="phrase-two">Au revoir</h4>
+                                <p class="en-phrase">Goodbye</p>
+                            </li>
+                            <li class="phrase-item">
+                                <h4 class="translated" id="phrase-three">Merci</h4>
+                                <p class="en-phrase">Thank you</p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Container for right side elements (country info) at larger screen sizes -->
-        <div class="col-md-6"></div>
     </div>
-    <!--Country information rendering // Right side of large screen -->
-    <div class="container" id="countryCard">
-        <div id="country">
-            <h2 id="countryName">Country Name</h2>
-            <img id="flag" src="" alt="country flag">
-        </div>
-        <div id="factsContainer">
-            <p>Capital:</p>
-            <p id="capital"></p>
-            <p>Population:</p>
-            <p id="population"></p>
-            <p>Languages:</p>
-            <p id="languages"></p>
-            <p>Region:</p>
-            <p id="region"></p>
-            <p>Currency:</p>
-            <p id="currency"></p>
-        </div>
-        <div id="phraseContainer">
-            <p id="phrase1">Good morning</p>
-            <!-- <p id="translation1">Buenos dias</p> APPEND WITH JS -->
-            <p id="phrase2">Hello</p>
-            <!-- <p id="translation2">Hola</p> APPEND WITH JS -->
-            <p id="phrase3">How are you doing?</p>
-            <!-- <p id="translation2">¿Cómo estás?</p> APPEND WITH JS-->
-        </div>
-    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script src="./norway.js"></script>
     <script src="./script.js"></script>
 </body>
