@@ -2,7 +2,7 @@
 
 ## Description
 <!-- TODO: Links needs updating when Github Pages is up -->
-[**View Demo**](https://agia.github.io/Country-Info)
+[**View Demo**](https://anawada.github.io/Country-Info)
 </br>
 </br>
 A web app to find interesting details about a given country.
@@ -13,7 +13,7 @@ The app also provides the option, to save entered countries into a 'Wish List', 
 
 ## Usage
 <!-- TODO: Links needs updating when Github Pages is up -->
-You can use the app directly via it's Github Pages deployment (found [**here**](https://agia.github.io/Country-Info) or by using the `View Demo` link above).
+You can use the app directly via it's Github Pages deployment (found [**here**](https://anawada.github.io/Country-Info) or by using the `View Demo` link above).
 
 Below is a gif showing the app in use:
 <!-- TODO: UPLOAD SCREENSHOT -->
@@ -21,7 +21,7 @@ Below is a gif showing the app in use:
 
 ## Collaboration
 
-This was a collaborative project, from start to finish, between @Agia, @Alexis-NG and @anawada., where we tasked with creating an web app, based on technologies and skills we had learned thus far, and then implementing that as a group.
+This was a collaborative project, from start to finish, between @Agia, @Alexis-NG and @anawada, where we tasked with creating an web app, based on technologies and skills we had learned thus far, and then implementing that as a group.
 
 Once we settled on an idea, we created a basic wireframe, so that we each had a good sense, in terms of design and structure, what we were aiming for.
 
@@ -40,7 +40,7 @@ Each of the following were used in this project to a greater, or lesser, degree:
 **For functionality:**
 
 - [CountryAPI](https://countryapi.io/) for retrieving country information to populate the country info card area.
-- [text-translate2 API](https://day.js.org) for retrieving translation data to populate the phrases area.
+- [text-translate2 API](https://rapidapi.com/dickyagustin/api/text-translator2) for retrieving translation data to populate the phrases area.
 
 **For user experience and design:**
 
