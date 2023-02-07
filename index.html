@@ -26,29 +26,55 @@
 <body>
     <!--Search box and navigation-->
     <div class="container"></div>
-    <!-- Hero and search input // Left side of large screen -->
-    <div class="container"></div>
+
+    <div class="row">
+        <!-- Hero and search input // Left side of large screen -->
+        <div class="container jumbotron jumbotron-fluid icol-sm col-md-6" id="hero-search">
+            <div class="container">
+                <h1 class="display-4">Country Finder</h1>
+                <p class="lead">Search a country name for useful information about it. Or use the menu above to display
+                    your wish list and previously visited countries.</p>
+
+                <div class="input-group input-group-lg" id="search-input">
+                    <input type="text" class="form-control" id="search" aria-label="Search input"
+                        aria-describedby="Search input">
+                    <div class="input-group-prepend">
+                        <button type="button" class="btn btn-success" id="button-search">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Container for right side elements (country info) at larger screen sizes -->
+        <div class="col-md-6"></div>
+    </div>
     <!--Country information rendering // Right side of large screen -->
-    <div class="container">
+    <div class="container" id="countryCard">
         <div id="country">
             <h2 id="countryName">Country Name</h2>
             <img id="flag" src="" alt="country flag">
         </div>
+        <div id="factsContainer">
+            <p>Capital:</p>
+            <p id="capital"></p>
+            <p>Population:</p>
+            <p id="population"></p>
+            <p>Languages:</p>
+            <p id="languages"></p>
+            <p>Region:</p>
+            <p id="region"></p>
+            <p>Currency:</p>
+            <p id="currency"></p>
+        </div>
         <div id="phraseContainer">
             <p id="phrase1">Good morning</p>
-            <!-- <p id="translation1">Buenos dias</p> ADDED WITH JS -->
+            <!-- <p id="translation1">Buenos dias</p> APPEND WITH JS -->
             <p id="phrase2">Hello</p>
-            <!-- <p id="translation2">Hola</p> ADDED WITH JS -->
+            <!-- <p id="translation2">Hola</p> APPEND WITH JS -->
             <p id="phrase3">How are you doing?</p>
-            <!-- <p id="translation2">¿Cómo estás?</p> ADDED WITH JS-->
-        </div>
-        <div>
-
+            <!-- <p id="translation2">¿Cómo estás?</p> APPEND WITH JS-->
         </div>
     </div>
-    <!--local expressions-->
-    <div class="container"></div>
-
+    <script src="./norway.js"></script>
     <script src="./script.js"></script>
 </body>
 
