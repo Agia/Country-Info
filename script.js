@@ -3,7 +3,7 @@ let country = "Norway";
 // "http://nadir.yabirgb.com/austria.json"
 // "https://countryapi.io/api/name/"+country+"?apikey="
 // "https://countryapi.io/api/all?apikey=YOUR-APIKEY"
-/* fetch("https://countryapi.io/api/name/" + country + "?apikey=9faUreLJojOnzlUoLLEoVq5QZfM3kHI5UY7kq6xX")
+/*fetch("http://nadir.yabirgb.com/austria.json")
     .then((response) => response.json())
     .then((data) => {
         console.log(data)
@@ -31,7 +31,12 @@ function obtainData(data) {
             const element = countryData.languages[languageCode]
             console.log(element)
             for (let i = 0; i < 1; i++) {
-                languagesEL.textContent += countryData.languages[languageCode] + ", "
+                if (Object.keys(countryData.languages).length < 2) {
+                    languagesEL.textContent += countryData.languages[languageCode]
+                } else {
+                    languagesEL.textContent += countryData.languages[languageCode] + ", "
+                }
+
             }
         }
 
@@ -76,34 +81,34 @@ let visitedCountries = [];
 let wishList = ["France"];
 
 //on click on Visited navbar item open a list of saved countries
-visitedNav.addEventListener("click", function() {
+visitedNav.addEventListener("click", function () {
 
     modalTitle.textContent = "Visited Countries";
-    
+
     if (visitedCountries.length > 0) {
-      modalList.textContent = visitedCountries
-      console.log("hello");
+        modalList.textContent = visitedCountries
+        console.log("hello");
     }
     // render a message
     else {
-       modalList.textContent = "You don't have any Countries on your list"
+        modalList.textContent = "You don't have any Countries on your list"
     }
-  });
+});
 //on click on Wish list  navbar item open a list of saved countries
 
-wishListNav.addEventListener("click", function() {
+wishListNav.addEventListener("click", function () {
 
     modalTitle.textContent = "Wish List";
-    
+
     if (wishList.length > 0) {
-      modalList.textContent = wishList
-      console.log("Hello")
+        modalList.textContent = wishList
+        console.log("Hello")
     }
     // render a message
     else {
-       modalList.textContent = "You don't have any Countries on your list"
+        modalList.textContent = "You don't have any Countries on your list"
     }
-  });
+});
 
 //Connect the search input with the card rendering 
 //connect the buttons from card rendering with the navbar
@@ -118,18 +123,18 @@ const phraseTwo = "Goodbye";
 const phraseThree = "Thank you";
 
 // Does a fetch request to translate API with fixed, and generated, variables as parameters and renders content to 'Phrases' area of page
-function getTranslations (phrase) {
+function getTranslations(phrase) {
     // Variables to store the translated phrases
     let translatedPhraseOne;
     let translatedPhraseTwo;
     let translatedPhraseThree;
-    
+
     // Call to translate API using phraseOne
     const encodedParams = new URLSearchParams();
     encodedParams.append("source_language", "en");
     encodedParams.append("target_language", countryAlphaCode);
     encodedParams.append("text", phrase);
-    
+
     const options = {
         method: 'POST',
         headers: {
@@ -139,7 +144,7 @@ function getTranslations (phrase) {
         },
         body: encodedParams
     };
-    
+
     fetch('https://text-translator2.p.rapidapi.com/translate', options)
         .then(response => response.json())
         .then((input) => {
