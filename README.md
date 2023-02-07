@@ -27,9 +27,9 @@ Once we settled on an idea, we created a basic wireframe, so that we each had a 
 
 We then decided to divide the project in such a way that we would each cover a roughly equal amount of the work, as well as it being divided so that we would each have around the same amount of HTML, CSS and JavaScript to work with. We did this by dividing the web app into three main sections:
 
-- The navigation, search, wish list and visited list. (@anawada)
-- The hero, search area (_non-functioning only_), and the phrases / translations. (@Agia)
-- The country info (country name, flag, population, etc.) and the buttons related to the wish / visited lists. (@Alexis-NGB)
+- The navigation, search, wish list and visited list. ([@anawada](https://github.io/anawada))
+- The hero, search area (_non-functioning only_), and the phrases / translations. ([@Agia](https://github.io/Agia))
+- The country info (country name, flag, population, etc.) and the buttons related to the wish / visited lists. ([@Alexis-NGB](https://github.io/Alexis-NGB))
 
 As were each responsible for the structure (HTML), styling (CSS) and function (JavaScript) for each of our sections, we aimed to tackle parts that crossed over significantly, by either Slack, or Zoom during class hours. We also made use of Github's project kanban board to keep track of what we were each working on, and what tasks were still outstanding. 
 
