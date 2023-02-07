@@ -76,8 +76,8 @@ let visitedNav = document.querySelector(".visited");
 let wishListNav = document.querySelector(".wish-list")
 
 //variables to store saved countries
-let visitedCountries = [];
-let wishList = ["France"];
+let visitedCountries = ["France", "Portugal"];
+let wishList = ["France", "Portugal"];
 
 //on click on Visited navbar item open a list of saved countries
 visitedNav.addEventListener("click", function () {
@@ -85,8 +85,12 @@ visitedNav.addEventListener("click", function () {
     modalTitle.textContent = "Visited Countries";
 
     if (visitedCountries.length > 0) {
-        modalList.textContent = visitedCountries
-        console.log("hello");
+
+      for (let i = 0; i < visitedCountries.length; i++) {
+        const country = visitedCountries[i];
+        let countryList = document.createElement("li")
+        document.querySelector("#saved-countries").appendChild(countryList).textContent = country;
+      }
     }
     // render a message
     else {
@@ -100,9 +104,16 @@ wishListNav.addEventListener("click", function () {
     modalTitle.textContent = "Wish List";
 
     if (wishList.length > 0) {
-        modalList.textContent = wishList
-        console.log("Hello")
-    }
+        for (let i = 0; i < wishList.length; i++) {
+            const wishCountry = wishList[i];
+    
+            let wishItem = document.createElement("li")
+            document.querySelector("#saved-countries").appendChild(wishItem).textContent = wishCountry;
+    
+          }
+        }
+    
+
     // render a message
     else {
         modalList.textContent = "You don't have any Countries on your list"
