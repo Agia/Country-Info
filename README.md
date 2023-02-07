@@ -1,1 +1,55 @@
-# project1
+# Country Info
+
+## Description
+<!-- TODO: Links needs updating when Github Pages is up -->
+[**View Demo**](https://agia.github.io/Country-Info)
+</br>
+</br>
+A web app to find interesting details about a given country.
+
+The app runs in the browser, dynamically updating the HTML and CSS using vanilla JavaScript, and the Country API for country-related data, as well as the Text-Translate API for some local flavour (or phrases). This allows the user to input a country, and get details such as local currency, official languages used, population, and even the country flag will be rendered. It will also generated, and render, a list of phrases in the primary language.
+
+The app also provides the option, to save entered countries into a 'Wish List', or 'Visited' list, which uses localStorage to persist beyond browser reloads. The user can access their lists at any time using the nav links on the page, which will bring up the relevant list, as a modal, displaying all previous countries saved to that list.
+
+## Usage
+<!-- TODO: Links needs updating when Github Pages is up -->
+You can use the app directly via it's Github Pages deployment (found [**here**](https://agia.github.io/Country-Info) or by using the `View Demo` link above).
+
+Below is a gif showing the app in use:
+<!-- TODO: UPLOAD SCREENSHOT -->
+![Gif screenshot showing the country info page in use.](screenshot.gif)
+
+## Collaboration
+
+This was a collaborative project, from start to finish, between @Agia, @Alexis-NG and @anawada., where we tasked with creating an web app, based on technologies and skills we had learned thus far, and then implementing that as a group.
+
+Once we settled on an idea, we created a basic wireframe, so that we each had a good sense, in terms of design and structure, what we were aiming for.
+
+We then decided to divide the project in such a way that we would each cover a roughly equal amount of the work, as well as it being divided so that we would each have around the same amount of HTML, CSS and JavaScript to work with. We did this by dividing the web app into three main sections:
+
+- The navigation, search, wish list and visited list. (@anawada)
+- The hero, search area (_non-functioning only_), and the phrases / translations. (@Agia)
+- The country info (country name, flag, population, etc.) and the buttons related to the wish / visited lists. (@Alexis-NGB)
+
+As were each responsible for the structure (HTML), styling (CSS) and function (JavaScript) for each of our sections, we aimed to tackle parts that crossed over significantly, by either Slack, or Zoom during class hours. We also made use of Github's project kanban board to keep track of what we were each working on, and what tasks were still outstanding. 
+
+## Credits
+
+Each of the following were used in this project to a greater, or lesser, degree:
+
+**For functionality:**
+
+- [CountryAPI](https://countryapi.io/) for retrieving country information to populate the country info card area.
+- [text-translate2 API](https://day.js.org) for retrieving translation data to populate the phrases area.
+
+**For user experience and design:**
+
+- [Bootstrap](https://getbootstrap.com)
+- [Google Fonts](fonts.google.com)
+
+
+**For reference:**
+
+- [MDN](https://developer.mozilla.org/en-US/)
+- [W3Schools](https://www.w3schools.com)
+- The documentation of the projects listed above.
