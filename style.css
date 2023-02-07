@@ -120,5 +120,26 @@ h1 {
   /* Initial values, will finalise, and add others, when HTML structure is complete */
   #hero-search {
     text-align: center;
-  }
+  }}
+
+#countryCard {
+    background-color: lightgray;
+    border-radius: 20px;
+    display: flex;
+    height: 500px;
+    width: 600px;
+}
+
+#country {
+    margin-top: 20px;
+    display: grid;
+    grid-template-rows: 350px 350px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "countryName flag"
+    ;
+    width: 560px;
+    height: 200px;
+    background-color: white;
+    border-radius: 15px;
 }
