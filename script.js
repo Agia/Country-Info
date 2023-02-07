@@ -25,7 +25,7 @@ function obtainData(data) {
         let populationEL = document.getElementById("population")
         populationEL.textContent = countryData.population
 
-        //Languages
+        //LanguagesList
         let languagesEL = document.getElementById("languages")
         for (const languageCode in countryData.languages) {
             const element = countryData.languages[languageCode]
