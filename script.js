@@ -8,9 +8,45 @@
 //         console.log(data)
 //     });
 
-//Opening saved countries
-//on click Visited navbar item open a list of saved countries
-//on click Wish list  navbar item open a list of saved countries
+let modalTitle = document.querySelector("#modal-title");
+let modalList = document.querySelector("#saved-countries");
+let visitedNav = document.querySelector(".visited");
+let wishListNav = document.querySelector(".wishListNav")
+
+//variables to store saved countries
+let visitedCountries = [];
+let wishList = [];
+
+//on click on Visited navbar item open a list of saved countries
+visitedNav.addEventListener("click", function() {
+
+    modalTitle.textContent = "Visited Countries";
+    
+    if (visitedCountries.length > 0) {
+      modalList.textContent = visitedCountries
+      console.log("Hello")
+    }
+    // render a message
+    else {
+       modalList.textContent = "You don't have any Countries on your list"
+    }
+  });
+//on click on Wish list  navbar item open a list of saved countries
+
+wishListNav.addEventListener("click", function() {
+
+    modalTitle.textContent = "Wish List";
+    
+    if (wishList.length > 0) {
+      modalList.textContent = wishList
+      console.log("Hello")
+    }
+    // render a message
+    else {
+       modalList.textContent = "You don't have any Countries on your list"
+    }
+  });
+
 //Connect the search input with the card rendering 
 //connect the buttons from card rendering with the navbar
 //every time that a country is saved push inside the relative array 
