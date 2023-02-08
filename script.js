@@ -34,7 +34,7 @@ visitedNav.addEventListener("click", function() {
         document.querySelector(".empty-visited").textContent = "You still don't have any Countries on your list"
     }
 })
-//on click on Wish list  navbar item open a list of saved countries
+//Event Listener Wish list  navbar item open a list of saved countries
 wishListNav.addEventListener("click", function() {
     if (wishListArr.length > 0) {
       let wishListContainer = document.querySelector("#saved-countries-wishList");
@@ -51,6 +51,23 @@ wishListNav.addEventListener("click", function() {
         document.querySelector(".empty-wish").textContent = "You still don't have any Countries on your list"
     }
 });
+
+//Event Listener when a Country is saved goes to localStorage
+
+saveVisitedBtn.addEventListener("click", function(event){
+    // Prevents default behavior 
+    event.preventDefault();
+
+    visitedCountriesArr.push(countryData.name);
+})
+
+saveWishBtn.addEventListener("click", function(event){
+     // Prevents default behavior 
+     event.preventDefault();
+
+    wishListArr.push(countryData.name);
+})
+
 
 // Event listener for search input, which formats and stores the user input, calls a fetch request to the CountryAPI, and then calls the function to render the data
 searchButton.addEventListener("click", function (event) {
