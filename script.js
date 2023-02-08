@@ -14,16 +14,20 @@ let searchInput = document.querySelector("#search");
 let searchButton = document.querySelector("#button-search");
 let saveVisitedBtn = document.querySelector("#button-visited");
 let saveWishBtn = document.querySelector("#button-wishlist");
+let heroSearchContainer = document.querySelector("#hero-search");
+let infoRowContainer = document.querySelector("#info-container");
 
 //variables to store saved countries
-let visitedCountriesArr = localStorage.getItem("visited") || [];
-let wishListArr = localStorage.getItem("wish") || [];
+let visitedCountriesArr = JSON.parse(localStorage.getItem("visited")) || [];
+let wishListArr = JSON.parse(localStorage.getItem("wish")) || [];
 
 //on click on Visited navbar item open a list of saved countries
 visitedNav.addEventListener("click", function() {
+
     if (visitedCountriesArr.length > 0) {
       let listContainer = document.querySelector("#saved-countries-visited");
       listContainer.innerHTML = "";
+
       for (let i = 0; i < visitedCountriesArr.length; i++) {
         let visitedCountry = visitedCountriesArr[i];
         let countryList = document.createElement("li");
@@ -31,25 +35,25 @@ visitedNav.addEventListener("click", function() {
         listContainer.appendChild(countryList);
         countryList.textContent = visitedCountry;
       }
-    }else{
-
+    } else {
         document.querySelector(".empty-visited").textContent = "You still don't have any Countries on your list"
     }
 })
 //Event Listener Wish list  navbar item open a list of saved countries
 wishListNav.addEventListener("click", function() {
     if (wishListArr.length > 0) {
+
       let wishListContainer = document.querySelector("#saved-countries-wishList");
       wishListContainer.innerHTML = "";
-      for (let i = 0; i < wishListArr.length; i++) {
-      let wishCountry = wishListArr[i];
-      let wishCountryList = document.createElement("li");
 
-      wishListContainer.appendChild(wishCountryList);
-      wishCountryList.textContent = wishCountry;
-        
+      for (let i = 0; i < wishListArr.length; i++) {
+        let wishCountry = wishListArr[i];
+        let wishCountryList = document.createElement("li");
+
+        wishListContainer.appendChild(wishCountryList);
+        wishCountryList.textContent = wishCountry; 
       }
-    }else {
+    } else {
         document.querySelector(".empty-wish").textContent = "You still don't have any Countries on your list"
     }
 });
@@ -58,6 +62,8 @@ wishListNav.addEventListener("click", function() {
 saveVisitedBtn.addEventListener("click", function(event){
     // Prevents default behavior 
     event.preventDefault();
+    // To normalize output
+    country = country.toUpperCase();
     if (!visitedCountriesArr.includes(country)) {
 
         visitedCountriesArr.push(country);
@@ -69,6 +75,8 @@ saveVisitedBtn.addEventListener("click", function(event){
 saveWishBtn.addEventListener("click", function(event){
      // Prevents default behavior 
      event.preventDefault();
+     // To normalize output
+     country = country.toUpperCase();
     if (!wishListArr.includes(country)) {
         // If it doesn't, user input is pushed to the array
         wishListArr.push(country);
@@ -89,7 +97,12 @@ searchButton.addEventListener("click", function (event) {
         fetch("https://countryapi.io/api/name/" + country + "?apikey=9faUreLJojOnzlUoLLEoVq5QZfM3kHI5UY7kq6xX")
         .then((response) => response.json())
         .then((data) => {
+
+            heroSearchContainer.style.minWidth = "";
+            infoRowContainer.style.display = "";
+            
             obtainData(data)
+
         });
         
     } else {
@@ -97,11 +110,16 @@ searchButton.addEventListener("click", function (event) {
     } 
 })
 
+// Function to be called on page load
+function init() {
 
+    heroSearchContainer.style.minWidth = "70vw";
+    infoRowContainer.style.display = "none";
+}
 
+// Obtains data from CountryAPI and renders it to the page
 function obtainData(data) {
     for (const [countryCode, countryData] of Object.entries(data)) {
-
         //Capital
         let capitalEL = document.getElementById("capital")
         capitalEL.textContent = countryData.capital
@@ -112,14 +130,12 @@ function obtainData(data) {
 
         //LanguagesList
         let languagesEL = document.getElementById("languages")
+        // Added the below to show content stacking from previous requests
+        languagesEL.textContent = "";
         let languageCount = 0;
         for (const languageCode in countryData.languages) {
             const element = countryData.languages[languageCode]
-            console.log(element)
-            // for (let i = 0; i < 1; i++) {
-            // }
-            // console.log(i)
-            console.log(Object.keys(countryData.languages).length)
+
             if (Object.keys(countryData.languages).length === 1) {
                 languagesEL.textContent += countryData.languages[languageCode]
                 break
@@ -130,8 +146,6 @@ function obtainData(data) {
                 languagesEL.textContent += countryData.languages[languageCode]
             }
         }
-        // console.log(languagesEL.textContent.length -= 1, console.log(languagesEL.textContent))
-
         
         //Region
         let regionEL = document.getElementById("region")
@@ -139,6 +153,8 @@ function obtainData(data) {
 
         //Currency
         let currencyEL = document.getElementById("currency")
+        // Added the below to show content stacking from previous requests
+        currencyEL.innerHTML = "";
         for (const currencyCode in countryData.currencies) {
             const currency = countryData.currencies[currencyCode]
             console.log(currency.name)
@@ -162,6 +178,9 @@ function obtainData(data) {
     getTranslations(phraseOne);
     getTranslations(phraseTwo);
     getTranslations(phraseThree);
+
+    //  Clears the input field
+    searchInput.value = "";
 };
 
 
@@ -217,3 +236,6 @@ function getTranslations(phrase) {
     .catch(err => console.error(err));
     
 }
+
+// Calls on page load
+init();

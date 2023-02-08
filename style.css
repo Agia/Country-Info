@@ -22,30 +22,42 @@ body {
     color: var(--dark);
 }
 
+
+.wide {
+  min-width: 60vw;
+}
+
 /* Hero area, including search input / button, header and intro text */
 #hero-search {
-    margin: auto auto;
+    margin: 0 auto;
     background-color: var(--light);
     padding: 2rem;
-    padding-left: 4rem;
     max-width: 90%;
     text-align: center;
 }
 
 h1 {
-    /* font-family: var(--heading); */
+    font-family: var(--heading);
     font-size: 1.7rem;
 }
 
 /* Intro paragraph */
 #intro-text {
-    max-width: 90%;
+    max-width: 80%;
+    margin: 0 auto 2.4rem auto;
+}
+
+/* Search input container */
+#search-input {
+  max-width: 70%;
+  margin: 0 auto;
 }
 
 /* Search input */
 #search {
-    max-width: 70%;
+    font-family: var(--heading);
 }
+
 
 #search:focus {
     border: 2px var(--color) solid;
@@ -57,24 +69,23 @@ h1 {
     background-color: var(--color);
     font-family: var(--body);
     font-weight: 700;
-    /* border: none; */
 }
 
 .button {
     color: var(--light);
-    /* margin: 0 2rem; */
-    height: 2rem;
+    height: 3rem;
     width: 6rem;
-    border: 1px var(--dark) solid;
+    border: 0.5px var(--dark) solid;
 }
 
 #button-container {
     display: flex;
-    /* justify-content: end; */
 }
 
 /* Space for Nav Styles */
-
+header {
+  margin-bottom: 4rem;
+}
 
 
 /* Right side container, on large screens */

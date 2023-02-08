@@ -76,8 +76,8 @@
 <body>
     <div class="row">
         <!-- Hero and search input // Left side of large screen -->
-        <div class="container jumbotron jumbotron-fluid col-md-12 col-lg-4" id="hero-search">
-            <!-- <div class="container"> -->
+        <div class="container jumbotron jumbotron-fluid col-md-12 col-lg-4" id="hero-search" data-visibilty="fullscreen">
+
             <h1 class="display-4">Country Info</h1>
             <p id="intro-text">
                 Search a country name for useful information about it. Or use the menu
@@ -93,13 +93,12 @@
                     </button>
                 </div>
             </div>
-            <!-- </div> -->
         </div>
 
         <!-- Container for right side elements (country info) at larger screen sizes -->
         <div class="col-md-12 col-lg-7" id="info-container">
             <!--Country information, including phrases / local expressions -->
-            <div class="container row">
+            <div class="container row" id="info-row" data-visibilty="hide">
                 <!-- Content and structure for country info -->
 
                 <div class="col-md-6" id="country-data">
