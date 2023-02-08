@@ -58,15 +58,19 @@ saveVisitedBtn.addEventListener("click", function(event){
     // Prevents default behavior 
     event.preventDefault();
 
-    visitedCountriesArr.push(countryData.name);
+    visitedCountriesArr.push(country);
 })
 
 saveWishBtn.addEventListener("click", function(event){
      // Prevents default behavior 
      event.preventDefault();
 
-    wishListArr.push(countryData.name);
+    wishListArr.push(country);
 })
+
+//localStorage
+
+
 
 
 // Event listener for search input, which formats and stores the user input, calls a fetch request to the CountryAPI, and then calls the function to render the data
