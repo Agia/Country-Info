@@ -103,18 +103,27 @@ function obtainData(data) {
 
         //LanguagesList
         let languagesEL = document.getElementById("languages")
+        let languageCount = 0;
         for (const languageCode in countryData.languages) {
             const element = countryData.languages[languageCode]
             console.log(element)
-            for (let i = 0; i < 1; i++) {
-                if (Object.keys(countryData.languages).length < 2) {
-                    languagesEL.textContent += countryData.languages[languageCode]
-                } else {
-                    languagesEL.textContent += countryData.languages[languageCode] + ", "
-                }
+            // for (let i = 0; i < 1; i++) {
+            // }
+            // console.log(i)
+            console.log(Object.keys(countryData.languages).length)
+            if (Object.keys(countryData.languages).length === 1) {
+                languagesEL.textContent += countryData.languages[languageCode]
+                break
+            } else if (languageCount < Object.keys(countryData.languages).length - 1) {
+                languagesEL.textContent += countryData.languages[languageCode] + ", "
+                languageCount++
+            } else{
+                languagesEL.textContent += countryData.languages[languageCode]
             }
         }
+        // console.log(languagesEL.textContent.length -= 1, console.log(languagesEL.textContent))
 
+        
         //Region
         let regionEL = document.getElementById("region")
         regionEL.textContent = countryData.region

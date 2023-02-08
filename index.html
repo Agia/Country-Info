@@ -76,7 +76,7 @@
 <body>
     <div class="row">
         <!-- Hero and search input // Left side of large screen -->
-        <div class="container jumbotron jumbotron-fluid col-sm col-lg-4" id="hero-search">
+        <div class="container jumbotron jumbotron-fluid col-md-12 col-lg-4" id="hero-search">
             <!-- <div class="container"> -->
             <h1 class="display-4">Country Info</h1>
             <p id="intro-text">
@@ -97,49 +97,88 @@
         </div>
 
         <!-- Container for right side elements (country info) at larger screen sizes -->
-        <div class="col-lg-8" id="info-container">
+        <div class="col-md-12 col-lg-7" id="info-container">
             <!--Country information, including phrases / local expressions -->
-            <div class="container">
+            <div class="container row">
                 <!-- Content and structure for country info -->
-                <div class="container" id="countryCard">
-                    <div id="country">
-                        <h2 id="countryName">Country Name</h2>
-                        <img id="flag" src="" alt="country flag">
+
+                <div class="col-md-6" id="country-data">
+
+                    <h2 id="countryName">Country Name</h2>
+                    <img id="flag" src="" alt="country flag">
+
+                    <div class="list-group" id="factsContainer">
+                        <div href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1 bold">Capital:</h5>
+
+                            </div>
+                            <p class="mb-1 infoCountry" id="capital"></p>
+                        </div>
+
+                        <div href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1 bold">Population:</h5>
+                            </div>
+                            <p class="mb-1 infoCountry" id="population"></p>
+                        </div>
+
+                        <div href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1 bold">Languages:</h5>
+                            </div>
+                            <p class="mb-1 infoCountry" id="languages"></p>
+                        </div>
+
+                        <div href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1 bold">Region:</h5>
+
+                            </div>
+                            <p class="mb-1 infoCountry" id="region"></p>
+                        </div>
+
+                        <div href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1 bold">Currency:</h5>
+
+                            </div>
+                            <p class="mb-1 infoCountry" id="currency"></p>
+
+                        </div>
+
                     </div>
-                    <div id="factsContainer">
-                        <p>Capital:</p>
-                        <p id="capital"></p>
-                        <p>Population:</p>
-                        <p id="population"></p>
-                        <p>Languages:</p>
-                        <p id="languages"></p>
-                        <p>Region:</p>
-                        <p id="region"></p>
-                        <p>Currency:</p>
-                        <p id="currency"></p>
-                    </div>
-                    <!-- Local expressions -->
-                    <div class="container col-md 6" id="phrases">
-                      <!-- ? @Alexis IF YOU WANT FLAG ABOVE PHRASES UNCOMMENT BELOW AND CUT IT ABOVE -->
-                      <!-- <img id="flag" src="" alt="country flag"> -->
-                        <ul>
-                            <li class="phrase-item" id="phrase-title">
-                                <h4 class="translated">Phrases</h4>
-                            </li>
-                            <li class="phrase-item">
-                                <h4 class="translated" id="phrase-one">Bonjour</h4>
-                                <p class="en-phrase">Hello</p>
-                            </li>
-                            <li class="phrase-item">
-                                <h4 class="translated" id="phrase-two">Au revoir</h4>
-                                <p class="en-phrase">Goodbye</p>
-                            </li>
-                            <li class="phrase-item">
-                                <h4 class="translated" id="phrase-three">Merci</h4>
-                                <p class="en-phrase">Thank you</p>
-                            </li>
-                        </ul>
-                    </div>
+
+                </div>
+                <!-- Local expressions -->
+                <div class="container col-md 5" id="phrases">
+                    <!-- ? @Alexis IF YOU WANT FLAG ABOVE PHRASES UNCOMMENT BELOW AND CUT IT ABOVE -->
+                    <!-- <img id="flag" src="" alt="country flag"> -->
+                    <ul>
+                        <li class="phrase-item" id="phrase-title">
+                            <h4 class="translated">Phrases</h4>
+                        </li>
+                        <!-- <li id="phrase-icon">
+                            <img id= "translate-icon" src="/Sources/2793765.png" alt="translation icon">
+                        </li> !-->
+                        <li class="phrase-item">
+                            <h4 class="translated" id="phrase-one">Bonjour</h4>
+                            <p class="en-phrase">Hello</p>
+                        </li>
+                        <li class="phrase-item">
+                            <h4 class="translated" id="phrase-two">Au revoir</h4>
+                            <p class="en-phrase">Goodbye</p>
+                        </li>
+                        <li class="phrase-item">
+                            <h4 class="translated" id="phrase-three">Merci</h4>
+                            <p class="en-phrase">Thank you</p>
+                        </li>
+                        <li id="button-container">
+                            <button class="button">Wish List</button>
+                            <button class="button">Visited</button>
+                        </li>
+                    </ul>
+
                 </div>
             </div>
         </div>
