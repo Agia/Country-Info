@@ -17,16 +17,16 @@
     <div class="container">
         <ul class="nav justify-content-end">
             <li class="nav-item visited">
-                <a class="nav-link visited" href="#" data-toggle="modal" data-target="#modalCenter">Visited</a>
+                <a class="nav-link visited" href="#" data-toggle="modal" data-target="#modalCenterVisited">Visited</a>
             </li>
             <li class="nav-item wish-list">
-                <a class="nav-link wish-list" href="#" data-toggle="modal" data-target="#modalCenter">Wish List</a>
+                <a class="nav-link wish-list" href="#" data-toggle="modal" data-target="#modalCenterWish">Wish List</a>
             </li>
         </ul>
     </div>
 
     <!-- Modal Visited -->
-    <div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle"
+    <div class="modal fade" id="modalCenterVisited" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -37,7 +37,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <ul id="saved-countries-visted"></ul>
+                    <ul id="saved-countries-visited" class="empty-visited"></ul>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -50,7 +50,7 @@
 
     <!-- Modal Wishlist-->
 
-    <div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle"
+    <div class="modal fade" id="modalCenterWish" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -61,7 +61,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <ul id="saved-countries-wishList"></ul>
+                    <ul id="saved-countries-wishList" class="empty-wish"></ul>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">

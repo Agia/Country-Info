@@ -8,50 +8,53 @@ const phraseThree = "Thank you";
 let country;
 
 // Element variables
-let modalTitle = document.querySelector("#modal-title");
-let modalList = document.querySelector("#saved-countries");
 let visitedNav = document.querySelector(".visited");
 let wishListNav = document.querySelector(".wish-list");
 let searchInput = document.querySelector("#search");
 let searchButton = document.querySelector("#button-search");
 
 //variables to store saved countries
-let visitedCountries = [];
-let wishList = ["France"];
-
+let visitedCountriesArr = ["Germany"];
+let wishListArr = ["France"];
 //on click on Visited navbar item open a list of saved countries
+
 visitedNav.addEventListener("click", function() {
+    if (visitedCountriesArr.length > 0) {
+      let listContainer = document.querySelector("#saved-countries-visited");
+      listContainer.innerHTML = "";
+      for (let i = 0; i < visitedCountriesArr.length; i++) {
+        let visitedCountry = visitedCountriesArr[i];
+        let countryList = document.createElement("li");
 
-    modalTitle.textContent = "Visited Countries";
-    
-    if (visitedCountries.length > 0) {
-      modalList.textContent = visitedCountries
-      console.log("hello");
-    }
-    // render a message
-    else {
-       modalList.textContent = "You don't have any Countries on your list"
-    }
-});
+        listContainer.appendChild(countryList);
+        countryList.textContent = visitedCountry;
+      }
+    }else{
 
+        document.querySelector(".empty-visited").textContent = "You still don't have any Countries on your list"
+    }
+})
 //on click on Wish list  navbar item open a list of saved countries
 wishListNav.addEventListener("click", function() {
+    if (wishListArr.length > 0) {
+      let wishListContainer = document.querySelector("#saved-countries-wishList");
+      wishListContainer.innerHTML = "";
+      for (let i = 0; i < wishListArr.length; i++) {
+      let wishCountry = wishListArr[i];
+      let wishCountryList = document.createElement("li");
 
-    modalTitle.textContent = "Wish List";
-    
-    if (wishList.length > 0) {
-      modalList.textContent = wishList
-      console.log("Hello")
-    }
-    // render a message
-    else {
-       modalList.textContent = "You don't have any Countries on your list"
+      wishListContainer.appendChild(wishCountryList);
+      wishCountryList.textContent = wishCountry;
+        
+      }
+    }else {
+        document.querySelector(".empty-wish").textContent = "You still don't have any Countries on your list"
     }
 });
 
 // Event listener for search input, which formats and stores the user input, calls a fetch request to the CountryAPI, and then calls the function to render the data
 searchButton.addEventListener("click", function (event) {
-    // Prevents default behaviout
+    // Prevents default behavior 
     event.preventDefault();
 
     if (searchInput.value !== "") {
