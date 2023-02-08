@@ -16,7 +16,7 @@
 <header>
     <div class="container">
         <ul class="nav justify-content-end">
-            <li class="nav-item visited">
+            <li class="nav-item">
                 <a class="nav-link visited" href="#" data-toggle="modal" data-target="#modalCenterVisited">Visited</a>
             </li>
             <li class="nav-item wish-list">
@@ -43,6 +43,9 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">
                         Close
                     </button>
+                    <button type="button" class="btn btn-secondary" id="clear-visited">
+                        Clear All
+                    </button>
                 </div>
             </div>
         </div>
@@ -67,6 +70,9 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">
                         Close
                     </button>
+                    <button type="button" class="btn btn-secondary" id="clear-wishlist">
+                        Clear All
+                    </button>
                 </div>
             </div>
         </div>
@@ -76,7 +82,7 @@
 <body>
     <div class="row">
         <!-- Hero and search input // Left side of large screen -->
-        <div class="container jumbotron jumbotron-fluid col-md-12 col-lg-4" id="hero-search" data-visibilty="fullscreen">
+        <div class="container jumbotron jumbotron-fluid col-md-12 col-lg-4" id="hero-search">
 
             <h1 class="display-4">Country Info</h1>
             <p id="intro-text">
@@ -98,7 +104,7 @@
         <!-- Container for right side elements (country info) at larger screen sizes -->
         <div class="col-md-12 col-lg-7" id="info-container">
             <!--Country information, including phrases / local expressions -->
-            <div class="container row" id="info-row" data-visibilty="hide">
+            <div class="container row" id="info-row">
                 <!-- Content and structure for country info -->
 
                 <div class="col-md-6" id="country-data">

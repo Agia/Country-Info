@@ -16,6 +16,10 @@ let saveVisitedBtn = document.querySelector("#button-visited");
 let saveWishBtn = document.querySelector("#button-wishlist");
 let heroSearchContainer = document.querySelector("#hero-search");
 let infoRowContainer = document.querySelector("#info-container");
+let listContainer = document.querySelector("#saved-countries-visited");
+let wishListContainer = document.querySelector("#saved-countries-wishList");
+let clearButtonVisited = document.querySelector("#clear-visited");
+let clearButtonWishlist = document.querySelector("#clear-wishlist");
 
 //variables to store saved countries
 let visitedCountriesArr = JSON.parse(localStorage.getItem("visited")) || [];
@@ -25,7 +29,7 @@ let wishListArr = JSON.parse(localStorage.getItem("wish")) || [];
 visitedNav.addEventListener("click", function() {
 
     if (visitedCountriesArr.length > 0) {
-      let listContainer = document.querySelector("#saved-countries-visited");
+    //   let listContainer = document.querySelector("#saved-countries-visited");
       listContainer.innerHTML = "";
 
       for (let i = 0; i < visitedCountriesArr.length; i++) {
@@ -39,11 +43,12 @@ visitedNav.addEventListener("click", function() {
         document.querySelector(".empty-visited").textContent = "You still don't have any Countries on your list"
     }
 })
-//Event Listener Wish list  navbar item open a list of saved countries
+
+// Event Listener Wish list  navbar item open a list of saved countries
 wishListNav.addEventListener("click", function() {
     if (wishListArr.length > 0) {
 
-      let wishListContainer = document.querySelector("#saved-countries-wishList");
+    // let wishListContainer = document.querySelector("#saved-countries-wishList");
       wishListContainer.innerHTML = "";
 
       for (let i = 0; i < wishListArr.length; i++) {
@@ -81,10 +86,9 @@ saveWishBtn.addEventListener("click", function(event){
         // If it doesn't, user input is pushed to the array
         wishListArr.push(country);
         localStorage.setItem("wish", JSON.stringify(wishListArr));
-     }
-    
-   
+     }   
 })
+
 
 // Event listener for search input, which formats and stores the user input, calls a fetch request to the CountryAPI, and then calls the function to render the data
 searchButton.addEventListener("click", function (event) {
@@ -108,6 +112,19 @@ searchButton.addEventListener("click", function (event) {
     } else {
         return;
     } 
+})
+
+// Event listeners to clear all previous saved list items. Removes localStorage, HTML and empties the array
+clearButtonVisited.addEventListener("click", function (event) {
+    listContainer.innerHTML = "";
+    localStorage.removeItem("visited");
+    visitedCountriesArr = [];
+})
+
+clearButtonWishlist.addEventListener("click", function (event) {
+    wishListContainer.innerHTML = "";
+    localStorage.removeItem("wish");
+    wishListArr = [];
 })
 
 // Function to be called on page load
