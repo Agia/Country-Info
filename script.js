@@ -14,10 +14,10 @@ let searchInput = document.querySelector("#search");
 let searchButton = document.querySelector("#button-search");
 
 //variables to store saved countries
-let visitedCountriesArr = ["Germany"];
-let wishListArr = ["France"];
-//on click on Visited navbar item open a list of saved countries
+let visitedCountriesArr = localStorage.getItem("visited") || [];
+let wishListArr = localStorage.getItem("wish") || [];
 
+//on click on Visited navbar item open a list of saved countries
 visitedNav.addEventListener("click", function() {
     if (visitedCountriesArr.length > 0) {
       let listContainer = document.querySelector("#saved-countries-visited");
@@ -53,25 +53,28 @@ wishListNav.addEventListener("click", function() {
 });
 
 //Event Listener when a Country is saved goes to localStorage
-
 saveVisitedBtn.addEventListener("click", function(event){
     // Prevents default behavior 
     event.preventDefault();
+    if (!visitedCountriesArr.includes(country)) {
 
-    visitedCountriesArr.push(country);
-})
+        visitedCountriesArr.push(country);
+        localStorage.setItem("visited", JSON.stringify(visitedCountriesArr));
+    }
+    
+});
 
 saveWishBtn.addEventListener("click", function(event){
      // Prevents default behavior 
      event.preventDefault();
-
-    wishListArr.push(country);
+    if (!wishListArr.includes(country)) {
+        // If it doesn't, user input is pushed to the array
+        wishListArr.push(country);
+        localStorage.setItem("wish", JSON.stringify(wishListArr));
+     }
+    
+   
 })
-
-//localStorage
-
-
-
 
 // Event listener for search input, which formats and stores the user input, calls a fetch request to the CountryAPI, and then calls the function to render the data
 searchButton.addEventListener("click", function (event) {
