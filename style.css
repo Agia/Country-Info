@@ -29,6 +29,7 @@ body {
     padding: 2rem;
     padding-left: 4rem;
     max-width: 90%;
+    text-align: center;
 }
 
 h1 {
@@ -90,8 +91,8 @@ h1 {
     background: var(--light);
     color: var(--dark);
     border: 3px var(--dark) solid;
-    max-width: 200px;
-    height: 5.8rem;
+    width: 200px;
+    height: 5.5rem;
 }
 
 /* Targetting the even children of the phrases list */
@@ -104,23 +105,15 @@ h1 {
   padding-bottom: 4px;
   margin: 0;
   font-weight: 700;
+  font-size: 1.2rem;
 }
 
 /* <p> for English translation words */
 .en-phrase {
-  font-size: .9rem; 
-  line-height: 1.4rem;
+  font-size: 0.9rem; 
+  line-height: 1.1rem;
   margin: 0;
 }
-
-
-
-/* MEDIA QUERIES */
-@media screen and (max-width: 768px) {
-  /* Initial values, will finalise, and add others, when HTML structure is complete */
-  #hero-search {
-    text-align: center;
-  }}
 
 #countryCard {
     background-color: lightgray;
@@ -142,4 +135,14 @@ h1 {
     height: 200px;
     background-color: white;
     border-radius: 15px;
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 991px) {
+  /* Initial values, will finalise, and add others, when HTML structure is complete */
+  #hero-search {
+    align-items: center;
+  }
 }

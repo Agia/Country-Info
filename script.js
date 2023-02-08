@@ -1,16 +1,67 @@
-let country = "Norway";
 // "9faUreLJojOnzlUoLLEoVq5QZfM3kHI5UY7kq6xX"
 // "http://nadir.yabirgb.com/austria.json"
 // "https://countryapi.io/api/name/"+country+"?apikey="
 // "https://countryapi.io/api/all?apikey=YOUR-APIKEY"
-/*fetch("http://nadir.yabirgb.com/austria.json")
-    .then((response) => response.json())
-    .then((data) => {
-        console.log(data)
-        obtainData(data)
-    }); */
-console.log(norway)
-obtainData(norway)
+/* fetch("https://countryapi.io/api/name/" + country + "?apikey=9faUreLJojOnzlUoLLEoVq5QZfM3kHI5UY7kq6xX")
+.then((response) => response.json())
+.then((data) => {
+    console.log(data)
+    obtainData(data)
+}); */
+
+// Variable to store the country alpha2 code, from Country API. Hardcoded for testing, until CountryAPI code is implemented
+let countryAlphaCode;
+// Variables to store English phrases
+const phraseOne = "Hello";
+const phraseTwo = "Goodbye";
+const phraseThree = "Thank you";
+
+let country = "Norway";
+
+// Keep obtainData() function call below the above variables, as it uses them and won't work correctly otherwise
+console.log(norway);
+obtainData(norway);
+
+// Element variables
+let modalTitle = document.querySelector("#modal-title");
+let modalList = document.querySelector("#saved-countries");
+let visitedNav = document.querySelector(".visited");
+let wishListNav = document.querySelector(".wish-list");
+
+//variables to store saved countries
+let visitedCountries = [];
+let wishList = ["France"];
+
+//on click on Visited navbar item open a list of saved countries
+visitedNav.addEventListener("click", function() {
+
+    modalTitle.textContent = "Visited Countries";
+    
+    if (visitedCountries.length > 0) {
+      modalList.textContent = visitedCountries
+      console.log("hello");
+    }
+    // render a message
+    else {
+       modalList.textContent = "You don't have any Countries on your list"
+    }
+});
+
+//on click on Wish list  navbar item open a list of saved countries
+wishListNav.addEventListener("click", function() {
+
+    modalTitle.textContent = "Wish List";
+    
+    if (wishList.length > 0) {
+      modalList.textContent = wishList
+      console.log("Hello")
+    }
+    // render a message
+    else {
+       modalList.textContent = "You don't have any Countries on your list"
+    }
+});
+
 
 function obtainData(data) {
     for (const [countryCode, countryData] of Object.entries(data)) {
@@ -67,68 +118,23 @@ function obtainData(data) {
         //CountryName
         let countryNameEL = document.getElementById("countryName")
         countryNameEL.textContent = countryData.name
+
+        // CountryAlpha2Code - Retrieves data and converts it to a readable format for translate API
+        countryAlphaCode = countryData.alpha2Code.toLowerCase();
+
     }
+    // TODO: NEED TO ENABLE THESE FOR PRESENTATION - Commented out for now to not call translate API on page load.
+    // Calls the translate function to translate and render phrases to the page
+    // getTranslations(phraseOne);
+    // getTranslations(phraseTwo);
+    // getTranslations(phraseThree);
 };
-// Commented this out as it makes an API call everytime one of us changes anything - Might be worth copy/pasting it somewhere local if needed and deleting it from repo?
 
-// let stuff;
-// fetch("https://countryapi.io/api/name/austria?apikey=JDi0TGPbrqRCyHdRBVDEJVoP73cKyeehMnzV8PET")
-//     .then((response) => response.json())
-//     .then((data) => {
-//         stuff = data;
-//         console.log(data)
-//     });
-
-let modalTitle = document.querySelector("#modal-title");
-let modalList = document.querySelector("#saved-countries");
-let visitedNav = document.querySelector(".visited");
-let wishListNav = document.querySelector(".wish-list")
-
-//variables to store saved countries
-let visitedCountries = [];
-let wishList = ["France"];
-
-//on click on Visited navbar item open a list of saved countries
-visitedNav.addEventListener("click", function () {
-
-    modalTitle.textContent = "Visited Countries";
-
-    if (visitedCountries.length > 0) {
-        modalList.textContent = visitedCountries
-        console.log("hello");
-    }
-    // render a message
-    else {
-        modalList.textContent = "You don't have any Countries on your list"
-    }
-});
-//on click on Wish list  navbar item open a list of saved countries
-
-wishListNav.addEventListener("click", function () {
-
-    modalTitle.textContent = "Wish List";
-
-    if (wishList.length > 0) {
-        modalList.textContent = wishList
-        console.log("Hello")
-    }
-    // render a message
-    else {
-        modalList.textContent = "You don't have any Countries on your list"
-    }
-});
 
 //Connect the search input with the card rendering 
 //connect the buttons from card rendering with the navbar
 //every time that a country is saved push inside the relative array 
 
-// Variable to store the country alpha2 code, from Country API. Hardcoded for testing, until CountryAPI code is implemented
-let countryAlphaCode = "es";
-
-// Variables to store English phrases
-const phraseOne = "Hello";
-const phraseTwo = "Goodbye";
-const phraseThree = "Thank you";
 
 // Does a fetch request to translate API with fixed, and generated, variables as parameters and renders content to 'Phrases' area of page
 function getTranslations(phrase) {
@@ -154,31 +160,52 @@ function getTranslations(phrase) {
     };
 
     fetch('https://text-translator2.p.rapidapi.com/translate', options)
-        .then(response => response.json())
-        .then((input) => {
-
-            // Local variables to store HTML elements changed via the function
-            let phraseOneElement = document.querySelector("#phrase-one");
-            let phraseTwoElement = document.querySelector("#phrase-two");
-            let phraseThreeElement = document.querySelector("#phrase-three");
-
-            // Compares passed parameter to global values, saves the relavant data and changes the associated HTML element. If not match is found, the function returns;
-            if (phrase === phraseOne) {
-                translatedPhraseOne = input.data.translatedText;
-                phraseOneElement.textContent = `${translatedPhraseOne}`;
-
-            } else if (phrase === phraseTwo) {
-                translatedPhraseTwo = input.data.translatedText;
-                phraseTwoElement.textContent = `${translatedPhraseTwo}`;
-
-            } else if (phrase === phraseThree) {
-                translatedPhraseThree = input.data.translatedText;
-                phraseThreeElement.textContent = `${translatedPhraseThree}`;
-
-            } else {
-                return;
-            }
-        })
-        .catch(err => console.error(err));
-
+    .then(response => response.json())
+    .then((input) => {
+        
+        // Local variables to store HTML elements changed via the function
+        let phraseOneElement = document.querySelector("#phrase-one");
+        let phraseTwoElement = document.querySelector("#phrase-two");
+        let phraseThreeElement = document.querySelector("#phrase-three");
+        
+        // Compares passed parameter to global values, saves the relavant data and changes the associated HTML element. If not match is found, the function returns;
+        if (phrase === phraseOne) {
+            translatedPhraseOne = input.data.translatedText;
+            phraseOneElement.textContent = `${translatedPhraseOne}`;
+            
+        } else if (phrase === phraseTwo) {
+            translatedPhraseTwo = input.data.translatedText;
+            phraseTwoElement.textContent = `${translatedPhraseTwo}`;
+            
+        } else if (phrase === phraseThree) {
+            translatedPhraseThree = input.data.translatedText;
+            phraseThreeElement.textContent = `${translatedPhraseThree}`;
+            
+        } else {
+            return;
+        }
+    })
+    .catch(err => console.error(err));
+    
 }
+
+
+
+
+
+
+
+
+
+
+// Possibly unused code below - Please do insert code above
+
+// Commented this out as it makes an API call everytime one of us changes anything - Might be worth copy/pasting it somewhere local if needed and deleting it from repo?
+
+// let stuff;
+// fetch("https://countryapi.io/api/name/austria?apikey=JDi0TGPbrqRCyHdRBVDEJVoP73cKyeehMnzV8PET")
+//     .then((response) => response.json())
+//     .then((data) => {
+//         stuff = data;
+//         console.log(data)
+//     });
