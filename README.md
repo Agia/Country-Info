@@ -25,13 +25,13 @@ This was a collaborative project, from start to finish, between @Agia, @Alexis-N
 
 Once we settled on an idea, we created a basic wireframe, so that we each had a good sense, in terms of design and structure, what we were aiming for.
 
-We then decided to divide the project in such a way that we would each cover a roughly equal amount of the work, as well as it being divided so that we would each have around the same amount of HTML, CSS and JavaScript to work with. We did this by dividing the web app into three main sections:
+We decided to divide the project in such a way that we would each cover a roughly equal amount of the work, as well as it being divided so that we would each have around the same amount of HTML, CSS and JavaScript to work with. We did this by dividing the web app into three main sections:
 
-- The navigation, search, wish list and visited list. ([@anawada](https://github.io/anawada))
-- The hero, search area (_non-functioning only_), and the phrases / translations. ([@Agia](https://github.io/Agia))
-- The country info (country name, flag, population, etc.) and the buttons related to the wish / visited lists. ([@Alexis-NGB](https://github.io/Alexis-NGB))
+- The navigation, search, wish list and visited list.
+- The hero, search area (_non-functioning_), and the phrases / translations.
+- The country info (country name, flag, population, etc.) and the buttons related to the wish / visited lists.
 
-As were each responsible for the structure (HTML), styling (CSS) and function (JavaScript) for each of our sections, we aimed to tackle parts that crossed over significantly, by either Slack, or Zoom during class hours. We also made use of Github's project kanban board to keep track of what we were each working on, and what tasks were still outstanding. 
+Although we were each responsible for the structure (HTML), styling (CSS) and function (JavaScript) for each of our sections, we expected some amount of overlap. Therefore we aimed to tackle parts that crossed over significantly by either Zoom, during class hours, or Slack. We also made use of Github's project kanban board to keep track of what we were each working on, and what tasks were still outstanding. 
 
 ## Credits
 
