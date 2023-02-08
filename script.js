@@ -1,9 +1,10 @@
-// Variable to store the country alpha2 code, from Country API. Hardcoded for testing, until CountryAPI code is implemented
+// Variable to store the country alpha2 code, from Country API
 let countryAlphaCode;
 // Variables to store English phrases
 const phraseOne = "Hello";
 const phraseTwo = "Goodbye";
 const phraseThree = "Thank you";
+
 // Variable to store and manipulate user input
 let country;
 
@@ -16,16 +17,20 @@ let saveVisitedBtn = document.querySelector("#button-visited");
 let saveWishBtn = document.querySelector("#button-wishlist");
 let heroSearchContainer = document.querySelector("#hero-search");
 let infoRowContainer = document.querySelector("#info-container");
+let listContainer = document.querySelector("#saved-countries-visited");
+let wishListContainer = document.querySelector("#saved-countries-wishList");
+let clearButtonVisited = document.querySelector("#clear-visited");
+let clearButtonWishlist = document.querySelector("#clear-wishlist");
 
-//variables to store saved countries
+// Variables to store saved countries
 let visitedCountriesArr = JSON.parse(localStorage.getItem("visited")) || [];
 let wishListArr = JSON.parse(localStorage.getItem("wish")) || [];
 
-//on click on Visited navbar item open a list of saved countries
+// On click on Visited navbar item open a list of saved countries
 visitedNav.addEventListener("click", function() {
 
     if (visitedCountriesArr.length > 0) {
-      let listContainer = document.querySelector("#saved-countries-visited");
+
       listContainer.innerHTML = "";
 
       for (let i = 0; i < visitedCountriesArr.length; i++) {
@@ -39,11 +44,11 @@ visitedNav.addEventListener("click", function() {
         document.querySelector(".empty-visited").textContent = "You still don't have any Countries on your list"
     }
 })
-//Event Listener Wish list  navbar item open a list of saved countries
+
+// Event Listener Wish list  navbar item open a list of saved countries
 wishListNav.addEventListener("click", function() {
     if (wishListArr.length > 0) {
 
-      let wishListContainer = document.querySelector("#saved-countries-wishList");
       wishListContainer.innerHTML = "";
 
       for (let i = 0; i < wishListArr.length; i++) {
@@ -58,12 +63,15 @@ wishListNav.addEventListener("click", function() {
     }
 });
 
+
 //Event Listener when a Country is saved goes to localStorage
 saveVisitedBtn.addEventListener("click", function(event){
     // Prevents default behavior 
     event.preventDefault();
-    // To normalize output
-    country = country.toUpperCase();
+
+    // Formats output for list render
+    country = capitalizeWord(country);
+
     if (!visitedCountriesArr.includes(country)) {
 
         visitedCountriesArr.push(country);
@@ -73,48 +81,70 @@ saveVisitedBtn.addEventListener("click", function(event){
 });
 
 saveWishBtn.addEventListener("click", function(event){
-     // Prevents default behavior 
-     event.preventDefault();
-     // To normalize output
-     country = country.toUpperCase();
+    // Prevents default behavior 
+    event.preventDefault();
+    // Formats output for list render
+    country = capitalizeWord(country);
+
     if (!wishListArr.includes(country)) {
-        // If it doesn't, user input is pushed to the array
+        // User input is pushed to the array and stored in localStorage
         wishListArr.push(country);
         localStorage.setItem("wish", JSON.stringify(wishListArr));
-     }
-    
-   
+    }   
 })
-
+   
+    
 // Event listener for search input, which formats and stores the user input, calls a fetch request to the CountryAPI, and then calls the function to render the data
 searchButton.addEventListener("click", function (event) {
     // Prevents default behavior 
     event.preventDefault();
-
+    
+    // If the search is not empty, sets the country variable to the value of searchInput, and then lowercases it to pass to the fetch request API
     if (searchInput.value !== "") {
         country = searchInput.value.toLowerCase();
         
         fetch("https://countryapi.io/api/name/" + country + "?apikey=9faUreLJojOnzlUoLLEoVq5QZfM3kHI5UY7kq6xX")
         .then((response) => response.json())
         .then((data) => {
-
+            
+            // Sets the containers to the correct size, and visible, respectively
             heroSearchContainer.style.minWidth = "";
             infoRowContainer.style.display = "";
             
+            // Calls the function to render the data to page, passing the data from the fetch request
             obtainData(data)
-
+            
         });
         
     } else {
+        // Exits if the search input is empty
         return;
     } 
 })
+    
+// Event listeners to clear all previous saved list items. Removes localStorage, HTML and empties the array
+clearButtonVisited.addEventListener("click", function (event) {
+    listContainer.innerHTML = "";
+    localStorage.removeItem("visited");
+    visitedCountriesArr = [];
+})
 
+clearButtonWishlist.addEventListener("click", function (event) {
+    wishListContainer.innerHTML = "";
+    localStorage.removeItem("wish");
+    wishListArr = [];
+})
+    
 // Function to be called on page load
 function init() {
-
+    
     heroSearchContainer.style.minWidth = "70vw";
     infoRowContainer.style.display = "none";
+}
+
+// Capitalizes the first letter of a passed string
+function capitalizeWord(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 // Obtains data from CountryAPI and renders it to the page
@@ -157,7 +187,7 @@ function obtainData(data) {
         currencyEL.innerHTML = "";
         for (const currencyCode in countryData.currencies) {
             const currency = countryData.currencies[currencyCode]
-            console.log(currency.name)
+
             currencyEL.textContent += currency.name
         }
 
