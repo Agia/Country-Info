@@ -12,6 +12,8 @@ let visitedNav = document.querySelector(".visited");
 let wishListNav = document.querySelector(".wish-list");
 let searchInput = document.querySelector("#search");
 let searchButton = document.querySelector("#button-search");
+let saveVisitedBtn = document.querySelector("#button-visited");
+let saveWishBtn = document.querySelector("#button-wishlist");
 
 //variables to store saved countries
 let visitedCountriesArr = localStorage.getItem("visited") || [];
