@@ -17,9 +17,9 @@
 
 /* STYLES */
 body {
-  font-family: var(--body);
-  background-color: var(--light);
-  color: var(--dark);
+    font-family: var(--body);
+    background-color: var(--light);
+    color: var(--dark);
 }
 
 /* Hero area, including search input / button, header and intro text */
@@ -33,32 +33,45 @@ body {
 }
 
 h1 {
-/* font-family: var(--heading); */
-  font-size: 1.7rem;
+    /* font-family: var(--heading); */
+    font-size: 1.7rem;
 }
 
 /* Intro paragraph */
 #intro-text {
-  max-width: 90%;
+    max-width: 90%;
 }
 
 /* Search input */
 #search {
-  max-width: 70%;
+    max-width: 70%;
 }
 
 #search:focus {
-  border: 2px var(--color) solid;
+    border: 2px var(--color) solid;
 }
 
 /* Search button */
-#button-search {
-  background-color: var(--color);
-  font-family: var(--body);
-  font-weight: 700;
-  /* border: none; */
+#button-search,
+.button {
+    background-color: var(--color);
+    font-family: var(--body);
+    font-weight: 700;
+    /* border: none; */
 }
 
+.button {
+    color: var(--light);
+    /* margin: 0 2rem; */
+    height: 2rem;
+    width: 6rem;
+    border: 1px var(--dark) solid;
+}
+
+#button-container {
+    display: flex;
+    /* justify-content: end; */
+}
 
 /* Space for Nav Styles */
 
@@ -67,11 +80,30 @@ h1 {
 /* Right side container, on large screens */
 
 #info-container {
-  margin-top: 7vh;
+    margin-top: 7vh;
+}
+
+.bold {
+    font-family: var(--heading);
+}
+
+#country-data {
+    text-align: center;
+}
+
+#flag {
+    display: block;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+#phrases {
+    justify-content: end;
 }
 
 /* Title for phrases list */
-#phrase-title {
+#phrase-title,
+#countryName {
     font-family: var(--heading);
     text-transform: uppercase;
     text-align: center;
@@ -97,22 +129,22 @@ h1 {
 
 /* Targetting the even children of the phrases list */
 .phrase-item:nth-of-type(even) {
-  text-align: right;
+    text-align: right;
 }
 
 /* <h4>'s containing translated word/phrase when returned */
 .translated {
-  padding-bottom: 4px;
-  margin: 0;
-  font-weight: 700;
-  font-size: 1.2rem;
+    padding-bottom: 4px;
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
 /* <p> for English translation words */
 .en-phrase {
-  font-size: 0.9rem; 
-  line-height: 1.1rem;
-  margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.1rem;
+    margin: 0;
 }
 
 #countryCard {
@@ -129,7 +161,7 @@ h1 {
     grid-template-rows: 350px 350px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
-    "countryName flag"
+        "countryName flag"
     ;
     width: 560px;
     height: 200px;
@@ -137,12 +169,37 @@ h1 {
     border-radius: 15px;
 }
 
+.infoCountry {
+    text-align: right;
+}
+
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 991px) {
-  /* Initial values, will finalise, and add others, when HTML structure is complete */
-  #hero-search {
-    align-items: center;
-  }
+@media screen and (max-width: 1000px) {
+
+    /* Initial values, will finalise, and add others, when HTML structure is complete */
+    #hero-search {
+        align-items: center;
+    }
+
+    #info-container,
+    #phrases {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 60px;
+    }
+}
+
+@media screen and (max-width: 753px) {
+    .phrase-item {
+        width: 70vw;
+        margin-left: -2rem;
+    }
+
+    #button-container {
+        display: flex;
+        justify-content: center;
+        margin-right: 2rem;
+      }
 }
