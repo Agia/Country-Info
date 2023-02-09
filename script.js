@@ -39,6 +39,7 @@ visitedNav.addEventListener("click", function() {
         let countryList = document.createElement("li");
 
         listContainer.appendChild(countryList);
+
         countryList.textContent = visitedCountry;
       }
     } else {
@@ -248,15 +249,16 @@ function getTranslations(phrase) {
     };
 
     fetch('https://text-translator2.p.rapidapi.com/translate', options)
-    .then(response => response.json())
-    .then((input) => {
-        
+    .then (response =>  {
         // Local variables to store HTML elements changed via the function
-        let phraseOneElement = document.querySelector("#phrase-one");
-        let phraseTwoElement = document.querySelector("#phrase-two");
-        let phraseThreeElement = document.querySelector("#phrase-three");
-        
-        // Compares passed parameter to global values, saves the relavant data and changes the associated HTML element. If not match is found, the function returns;
+    let phraseOneElement = document.querySelector("#phrase-one");
+    let phraseTwoElement = document.querySelector("#phrase-two");
+    let phraseThreeElement = document.querySelector("#phrase-three");
+
+    if (response.ok) {
+        return response.json()
+        .then (input => {
+             // Compares passed parameter to global values, saves the relavant data and changes the associated HTML element. If not match is found, the function returns;
         if (phrase === phraseOne) {
             translatedPhraseOne = input.data.translatedText;
             phraseOneElement.textContent = `${translatedPhraseOne}`;
@@ -272,8 +274,16 @@ function getTranslations(phrase) {
         } else {
             return;
         }
-    })
-    .catch(err => console.error(err));
+
+        })
+    } else {
+        phraseOneElement.textContent = "Unsupported language";
+        phraseTwoElement.textContent = "Unsupported language";
+        phraseThreeElement.textContent = "Unsupported language";
+        return;
+    }
+
+})
     
 }
 
