@@ -149,6 +149,14 @@ header {
     color: var(--dark);
 }
 
+.remove-btn{
+    font-size: 70%;
+    text-align: center;
+    margin-right: 10%;
+    height: 1.3rem;
+    width: 1.8rem;
+}
+
 /* Right side container, on large screens */
 
 #info-container {
