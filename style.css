@@ -29,7 +29,7 @@ body {
     background-color: var(--light);
     padding: 2rem;
     max-width: 90%;
-    text-align: center;
+    align-self: center;
 }
 
 h1 {
@@ -45,8 +45,8 @@ h1 {
 
 /* Search input container */
 #search-input {
-  max-width: 70vw;
-  margin: 0 auto;
+    max-width: 70vw;
+    margin: 0 auto;
 }
 
 /* Search input */
@@ -65,7 +65,6 @@ h1 {
     background-color: var(--color);
     font-family: var(--heading);
     font-weight: 700;
-    text-shadow: var(--dark) 1px 1px;
     text-transform: uppercase;
 }
 
@@ -78,23 +77,25 @@ h1 {
 }
 
 /* Adds an on hover effect to the buttons */
-.button:hover, #button-search:hover {
+.button:hover,
+#button-search:hover {
 
-  box-shadow: 2px 2px var(--dark);
+    box-shadow: 2px 2px var(--dark);
 }
+
 /* Adjusted to have shadow show on left */
 #button-wishlist:hover {
-  box-shadow: -2px 2px var(--dark);
+    box-shadow: -2px 2px var(--dark);
 }
 
 /* Add a feedback (depress) effect on click */
 #button-search:active {
-  box-shadow: none;
+    box-shadow: none;
 }
 
 .button:active {
-  padding: 10px 5px 5px 10px;
-  box-shadow: none;
+    padding: 10px 5px 5px 10px;
+    box-shadow: none;
 }
 
 /* Container for 'Wish List' and "Visited' buttons */
@@ -104,48 +105,58 @@ h1 {
 }
 
 li {
-  list-style: none;
+    list-style: none;
 }
+
 /* Space for Nav Styles */
+
+#navbar-container {
+    max-width: 83.75%;
+    padding-right: 0rem;
+    padding-left: 0rem;
+    margin-right: 10rem;
+    margin-left: 0rem;
+}
+    
 header {
-  margin-bottom: 4rem;
+    margin-bottom: 4rem;
 }
 
 #saved-countries-wishlist li {
-  text-transform: capitalize;
+    text-transform: capitalize;
 }
 
 .nav-link {
-  text-decoration: none;
-  font-family: var(--heading);
-  font-size: 1.5rem;
-  color: var(--light);
-  text-shadow: var(--dark) 1px 1px;
-  text-transform: uppercase;
-  background-color: var(--color);
-  border: var(--dark) .2px solid;
-  margin-left: 10px;
-  width: 10rem;
-  text-align: center;
+    text-decoration: none;
+    font-family: var(--heading);
+    font-size: 1.5rem;
+    color: var(--light);
+    text-transform: uppercase;
+    background-color: var(--color);
+    border: var(--dark) .2px solid;
+    margin-left: 10px;
+    width: 10rem;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .nav-link:hover {
-  box-shadow: 2px 2px var(--dark);
-  color: var(--light);
+    box-shadow: 2px 2px var(--dark);
+    color: var(--light);
 }
 
 .nav-link:active {
-  padding: 10px 5px 5px 10px;
-  box-shadow: none;
+    padding: 10px 5px 5px 10px;
+    box-shadow: none;
 }
 
 /* Modal */
 
-.modal-header{
+.modal-header {
     font-family: var(--heading);
 }
 
-.close{
+.close {
     color: var(--dark);
 }
 
@@ -252,10 +263,42 @@ header {
     border-radius: 15px;
 }
 
+.list-group-item-action {
+    margin: 0;
+    list-style: none;
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin-bottom: 0.7rem;
+    background: var(--light);
+    color: var(--dark);
+    border: 3px var(--dark) solid;
+    height: 5.5rem;
+}
+
+#search {
+    margin: 0;
+    list-style: none;
+    font-size: 1.2rem;
+    background: var(--light);
+    color: var(--dark);
+    border: 3px var(--dark) solid;
+    height: 3rem;
+}
+
 .infoCountry {
     text-align: right;
 }
 
+#translate-icon {
+    width: 5rem;
+    margin-block: 0.95rem;
+    display: block;
+    margin-left: 3.7rem;
+}
+
+.row {
+    display: flex;
+}
 
 /* MEDIA QUERIES */
 
@@ -284,5 +327,9 @@ header {
         display: flex;
         justify-content: center;
         margin-right: 2rem;
-      }
+    }
+
+    #translate-icon {
+        margin-left: 11.2rem;
+    }
 }
