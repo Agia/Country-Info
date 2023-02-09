@@ -21,6 +21,8 @@ let listContainer = document.querySelector("#saved-countries-visited");
 let wishListContainer = document.querySelector("#saved-countries-wishList");
 let clearButtonVisited = document.querySelector("#clear-visited");
 let clearButtonWishlist = document.querySelector("#clear-wishlist");
+let phraseError = document.querySelector("#phrase-error");
+let phraseItems = document.querySelector("#phrase-items");
 
 // Variables to store saved countries
 let visitedCountriesArr = JSON.parse(localStorage.getItem("visited")) || [];
@@ -113,6 +115,9 @@ searchButton.addEventListener("click", function (event) {
             // Sets the containers to the correct size, and visible, respectively
             heroSearchContainer.style.minWidth = "";
             infoRowContainer.style.display = "";
+
+            phraseError.style.display = "none";
+            phraseItems.style.display = "";
             
             // Calls the function to render the data to page, passing the data from the fetch request
             obtainData(data)
@@ -251,39 +256,44 @@ function getTranslations(phrase) {
     fetch('https://text-translator2.p.rapidapi.com/translate', options)
     .then (response =>  {
         // Local variables to store HTML elements changed via the function
-    let phraseOneElement = document.querySelector("#phrase-one");
-    let phraseTwoElement = document.querySelector("#phrase-two");
-    let phraseThreeElement = document.querySelector("#phrase-three");
+        let phraseOneElement = document.querySelector("#phrase-one");
+        let phraseTwoElement = document.querySelector("#phrase-two");
+        let phraseThreeElement = document.querySelector("#phrase-three");
 
-    if (response.ok) {
-        return response.json()
-        .then (input => {
-             // Compares passed parameter to global values, saves the relavant data and changes the associated HTML element. If not match is found, the function returns;
-        if (phrase === phraseOne) {
-            translatedPhraseOne = input.data.translatedText;
-            phraseOneElement.textContent = `${translatedPhraseOne}`;
-            
-        } else if (phrase === phraseTwo) {
-            translatedPhraseTwo = input.data.translatedText;
-            phraseTwoElement.textContent = `${translatedPhraseTwo}`;
-            
-        } else if (phrase === phraseThree) {
-            translatedPhraseThree = input.data.translatedText;
-            phraseThreeElement.textContent = `${translatedPhraseThree}`;
-            
+        // Error check if response is 200s
+        if (response.ok) {
+            return response.json()
+            .then (input => {
+
+                // Compares passed parameter to global values, saves the relavant data and changes the associated HTML element. If not match is found, the function returns;
+            if (phrase === phraseOne) {
+                translatedPhraseOne = input.data.translatedText;
+                phraseOneElement.textContent = `${translatedPhraseOne}`;
+                
+            } else if (phrase === phraseTwo) {
+                translatedPhraseTwo = input.data.translatedText;
+                phraseTwoElement.textContent = `${translatedPhraseTwo}`;
+                
+            } else if (phrase === phraseThree) {
+                translatedPhraseThree = input.data.translatedText;
+                phraseThreeElement.textContent = `${translatedPhraseThree}`;
+                
+            } else {
+                return;
+            }
+
+            })
+
         } else {
+            phraseError.style.display = "";
+            phraseItems.style.display = "none";
+            // phraseOneElement.textContent = "Unsupported language";
+            // phraseTwoElement.textContent = "Unsupported language";
+            // phraseThreeElement.textContent = "Unsupported language";
             return;
         }
 
-        })
-    } else {
-        phraseOneElement.textContent = "Unsupported language";
-        phraseTwoElement.textContent = "Unsupported language";
-        phraseThreeElement.textContent = "Unsupported language";
-        return;
-    }
-
-})
+    })
     
 }
 
