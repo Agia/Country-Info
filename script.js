@@ -7,6 +7,7 @@ const phraseThree = "Thank you";
 
 // Variable to store and manipulate user input
 let country;
+let countryList;
 
 // Element variables
 let visitedNav = document.querySelector(".visited");
@@ -36,7 +37,7 @@ visitedNav.addEventListener("click", function() {
       for (let i = 0; i < visitedCountriesArr.length; i++) {
         let visitedCountry = visitedCountriesArr[i];
 
-        let countryList = document.createElement("li");
+        countryList = document.createElement("li");
         listContainer.appendChild(countryList);
         countryList.textContent = visitedCountry;
 
@@ -51,11 +52,11 @@ visitedNav.addEventListener("click", function() {
     }
 })
 
-//Event Listener to delete Countries
-countryList.addEventListener("click", function(event){
-    event.target.matches("button");
-    console.log("Do something");
-})
+// Event Listener to delete Countries
+// countryList.addEventListener("click", function(event){
+//     event.target.matches("button");
+//     console.log("Do something");
+// })
 
 // Event Listener Wish list  navbar item open a list of saved countries
 wishListNav.addEventListener("click", function() {
