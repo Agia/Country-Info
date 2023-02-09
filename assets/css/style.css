@@ -1,0 +1,368 @@
+/* FONTS */
+/* Font(s) currently using for testing (Alyssa) - Can confirm final fonts / design decisions together later */
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Montserrat:wght@400;700&display=swap');
+
+/* VARIABLES */
+
+/* Added some variables to help with using the same colours, etc., and for my use. Feel free to use them or not (Alyssa) */
+:root {
+    /* COLOURS */
+    --dark: #242424;
+    --light: #fbfbfb;
+    --color: rgb(44, 227, 123);
+    /* FONTS */
+    --heading: "Fjalla One";
+    --body: "Montserrat"
+}
+
+/* STYLES */
+body {
+    font-family: var(--body);
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+
+/* Hero area, including search input / button, header and intro text */
+#hero-search {
+    margin: 0 auto;
+    background-color: var(--light);
+    padding: 2rem;
+    max-width: 90%;
+    align-self: center;
+}
+
+h1 {
+    font-family: var(--heading);
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+/* Intro paragraph */
+#intro-text {
+    max-width: 70vw;
+    margin: 1.4rem auto 2.4rem auto;
+}
+
+/* Search input container */
+#search-input {
+    max-width: 70vw;
+    margin: 0 auto;
+}
+
+/* Search input */
+#search {
+    font-family: var(--heading);
+    margin: 0;
+    list-style: none;
+    font-size: 1.2rem;
+    background: var(--light);
+    color: var(--dark);
+    border: 3px var(--dark) solid;
+    height: 3rem;
+}
+
+
+/* When highlighed, match accent color */
+#search:focus {
+    border: 2px var(--color) solid;
+}
+
+
+/* Buttons */
+
+/* Search button */
+#button-search,
+.button {
+    background-color: var(--color);
+    font-family: var(--heading);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Container for 'Wish List' and "Visited' buttons */
+#button-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.button {
+    color: var(--light);
+    height: 3rem;
+    width: 6rem;
+    border: 0.5px var(--dark) solid;
+}
+
+/* Adds an on hover effect to the buttons */
+.button:hover,
+#button-search:hover {
+
+    box-shadow: 2px 2px var(--dark);
+}
+
+/* Adjusted to have shadow show on left */
+#button-wishlist:hover {
+    box-shadow: -2px 2px var(--dark);
+}
+
+/* Add a feedback (depress) effect on click */
+#button-search:active {
+    box-shadow: none;
+}
+
+.button:active {
+    padding: 10px 5px 5px 10px;
+    box-shadow: none;
+}
+
+
+li {
+    list-style: none;
+}
+
+/* Space for Nav Styles */
+
+#navbar-container {
+    max-width: 83.75%;
+    padding-right: 0rem;
+    padding-left: 0rem;
+    margin-right: 10rem;
+    margin-left: 0rem;
+}
+    
+header {
+    margin-bottom: 4rem;
+}
+
+#saved-countries-wishlist li {
+    text-transform: capitalize;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-family: var(--heading);
+    font-size: 1.5rem;
+    color: var(--light);
+    text-transform: uppercase;
+    background-color: var(--color);
+    border: var(--dark) .2px solid;
+    margin-left: 10px;
+    width: 10rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.nav-link:hover {
+    box-shadow: 2px 2px var(--dark);
+    color: var(--light);
+}
+
+.nav-link:active {
+    padding: 10px 5px 5px 10px;
+    box-shadow: none;
+}
+
+/* Modal */
+
+.modal-header {
+    font-family: var(--heading);
+}
+
+.close {
+    color: var(--dark);
+}
+
+.remove-btn{
+    font-size: 70%;
+    text-align: center;
+    margin-right: 10%;
+    height: 1.3rem;
+    width: 1.8rem;
+}
+
+/* Right side container, on large screens */
+
+#info-container {
+    margin-top: 7vh;
+}
+
+.bold {
+    font-family: var(--heading);
+}
+
+#country-data {
+    text-align: center;
+}
+
+#flag {
+    display: block;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+
+
+
+#phrases {
+    justify-content: end;
+}
+
+
+/* Title for phrases list */
+#phrase-title,
+#countryName {
+    font-family: var(--heading);
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    border-bottom: 10px var(--color) solid;
+    padding: 0;
+    height: 2rem;
+    margin: 0 auto;
+}
+
+#phrase-error {
+  display: flex;
+  justify-content: center;
+  padding:2rem;
+  border: 3px var(--dark) solid;
+  margin: 2rem auto;
+  text-align: center;
+  max-width: 95%;
+}
+
+#phrase-error > h6 {
+  font-weight: 700;
+  margin: 0 auto;
+  border-bottom: 10px var(--color) solid;
+}
+
+/* <li> items in the list containing translated phrases */
+.phrase-item {
+    margin: 0 auto;
+    list-style: none;
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin-bottom: 0.7rem;
+    background: var(--light);
+    color: var(--dark);
+    border: 3px var(--dark) solid;
+    width: 200px;
+    height: 5.5rem;
+}
+
+/* Targetting the even children of the phrases list */
+.phrase-item:nth-of-type(even) {
+    text-align: right;
+}
+
+/* <h4>'s containing translated word/phrase when returned */
+.translated {
+    padding-bottom: 4px;
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* <p> for English translation words */
+.en-phrase {
+    font-size: 0.9rem;
+    line-height: 1.1rem;
+    margin: 0;
+}
+
+#countryCard {
+    background-color: lightgray;
+    border-radius: 20px;
+    display: flex;
+    height: 500px;
+    width: 600px;
+}
+
+#country {
+    margin-top: 20px;
+    display: grid;
+    grid-template-rows: 350px 350px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "countryName flag"
+    ;
+    width: 560px;
+    height: 200px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.list-group-item-action {
+    margin: 0;
+    list-style: none;
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin-bottom: 0.7rem;
+    background: var(--light);
+    color: var(--dark);
+    border: 3px var(--dark) solid;
+    height: 5.5rem;
+}
+
+.infoCountry {
+    text-align: right;
+}
+
+
+#phrase-title {
+  margin: 0 auto;
+}
+
+#translate-icon {
+    width: 5rem;
+    margin-block: 0.95rem;
+    display: block;
+    /* margin-left: 3.7rem; */
+    margin: 1rem auto;
+  }
+
+.row {
+    display: flex;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1000px) {
+
+    /* Initial values, will finalise, and add others, when HTML structure is complete */
+    #hero-search {
+        align-items: center;
+    }
+
+    #info-container,
+    #phrases {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 60px;
+    }
+}
+
+@media screen and (max-width: 753px) {
+    .phrase-item {
+        width: 70vw;
+        margin-left: -2rem;
+    }
+
+    #countryName, #phrase-title {
+      width: fit-content;
+      font-size: 2rem;
+    }
+
+    #button-container {
+        display: flex;
+        justify-content: center;
+        margin-right: 2rem;
+    }
+/* 
+    #translate-icon {
+        margin-left: 11.2rem;
+    } */
+}

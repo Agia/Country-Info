@@ -1,27 +1,27 @@
 # Country Info
 
 ## Description
-<!-- TODO: Links needs updating when Github Pages is up -->
-[**View Demo**](https://anawada.github.io/Country-Info)
+<!-- TODO: Links needs updating when repo name is updated -->
+[**View Demo**](https://anawada.github.io/project1/)
 </br>
 </br>
 A web app to find interesting details about a given country.
 
-The app runs in the browser, dynamically updating the HTML and CSS using vanilla JavaScript, and the Country API for country-related data, as well as the Text-Translate API for some local flavour (or phrases). This allows the user to input a country, and get details such as local currency, official languages used, population, and even the country flag will be rendered. It will also generated, and render, a list of phrases in the primary language.
+The app runs in the browser, dynamically updating the HTML and CSS using vanilla JavaScript, and the CountryAPI for country-related data, as well as the Text Translator2 API for some local flavour (or phrases). This allows the user to input a country, and get details such as local currency, official languages used, population, and even the country flag will be rendered. It will also (where available) generate, and render, a list of phrases in the primary language.
 
-The app also provides the option, to save entered countries into a 'Wish List', or 'Visited' list, which uses localStorage to persist beyond browser reloads. The user can access their lists at any time using the nav links on the page, which will bring up the relevant list, as a modal, displaying all previous countries saved to that list.
+The app also provides the option to save entered countries into a 'Wish List', or 'Visited' list, which uses localStorage to persist beyond browser reloads. The user can access their lists at any time using the nav links on the page, which will bring up the relevant list, as a modal, displaying all previous countries saved to that list. They even have the option to clear the list entirely, and start fresh.
 
 ## Usage
-<!-- TODO: Links needs updating when Github Pages is up -->
-You can use the app directly via it's Github Pages deployment (found [**here**](https://anawada.github.io/Country-Info) or by using the `View Demo` link above).
+<!-- TODO: Links needs updating when repo name is updated -->
+You can use the app directly via it's Github Pages deployment (found [**here**](https://anawada.github.io/project1/) or by using the `View Demo` link above).
 
 Below is a gif showing the app in use:
-<!-- TODO: UPLOAD SCREENSHOT -->
-![Gif screenshot showing the country info page in use.](screenshot.gif)
+
+![Gif screenshot showing the country info page in use.](./assets/img/screenshot.gif)
 
 ## Collaboration
 
-This was a collaborative project, from start to finish, between @Agia, @Alexis-NG and @anawada, where we tasked with creating an web app, based on technologies and skills we had learned thus far, and then implementing that as a group.
+This was a collaborative project, from start to finish, between [@Agia](https://github.io/Agia), [@Alexis-NG](https://github.io/Alexis-NG) and [@anawada](https://github.io/anawada), where we tasked with creating a web app, based on technologies and skills we had learned thus far, and then implementing that as a group.
 
 Once we settled on an idea, we created a basic wireframe, so that we each had a good sense, in terms of design and structure, what we were aiming for.
 
@@ -40,7 +40,7 @@ Each of the following were used in this project to a greater, or lesser, degree:
 **For functionality:**
 
 - [CountryAPI](https://countryapi.io/) for retrieving country information to populate the country info card area.
-- [text-translate2 API](https://rapidapi.com/dickyagustin/api/text-translator2) for retrieving translation data to populate the phrases area.
+- [text-translator2 API](https://rapidapi.com/dickyagustin/api/text-translator2) for retrieving translation data to populate the phrases area.
 
 **For user experience and design:**
 
@@ -51,5 +51,4 @@ Each of the following were used in this project to a greater, or lesser, degree:
 **For reference:**
 
 - [MDN](https://developer.mozilla.org/en-US/)
-- [W3Schools](https://www.w3schools.com)
 - The documentation of the projects listed above.
