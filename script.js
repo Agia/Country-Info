@@ -45,10 +45,10 @@ visitedNav.addEventListener("click", function() {
 
         countryList.textContent = visitedCountry;
 
-        let deleteBtn = document.createElement("button")
-        countryList.appendChild(deleteBtn);
-        deleteBtn.setAttribute("class", "button remove-btn")
-        deleteBtn.innerHTML = "X";
+        // let deleteBtn = document.createElement("button")
+        // countryList.appendChild(deleteBtn);
+        // deleteBtn.setAttribute("class", "button remove-btn")
+        // deleteBtn.innerHTML = "X";
 
       }
     } else {
@@ -76,10 +76,10 @@ wishListNav.addEventListener("click", function() {
         wishListContainer.appendChild(wishCountryList);
         wishCountryList.textContent = wishCountry; 
 
-        let deleteBtnW = document.createElement("button")
-        wishCountryList.appendChild(deleteBtnW);
-        deleteBtnW.setAttribute("class", "button remove-btn")
-        deleteBtnW.innerHTML = "X";
+        // let deleteBtnW = document.createElement("button")
+        // wishCountryList.appendChild(deleteBtnW);
+        // deleteBtnW.setAttribute("class", "button remove-btn")
+        // deleteBtnW.innerHTML = "X";
       }
     } else {
         document.querySelector(".empty-wish").textContent = "You can start your WISH Countries list, how exciting!!"

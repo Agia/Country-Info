@@ -2,7 +2,7 @@
 
 ## Description
 <!-- TODO: Links needs updating when Github Pages is up -->
-[**View Demo**](https://anawada.github.io/Country-Info)
+[**View Demo**](https://anawada.github.io/project1/)
 </br>
 </br>
 A web app to find interesting details about a given country.
@@ -13,7 +13,7 @@ The app also provides the option, to save entered countries into a 'Wish List', 
 
 ## Usage
 <!-- TODO: Links needs updating when Github Pages is up -->
-You can use the app directly via it's Github Pages deployment (found [**here**](https://anawada.github.io/Country-Info) or by using the `View Demo` link above).
+You can use the app directly via it's Github Pages deployment (found [**here**](https://anawada.github.io/project1/) or by using the `View Demo` link above).
 
 Below is a gif showing the app in use:
 <!-- TODO: UPLOAD SCREENSHOT -->
@@ -51,5 +51,4 @@ Each of the following were used in this project to a greater, or lesser, degree:
 **For reference:**
 
 - [MDN](https://developer.mozilla.org/en-US/)
-- [W3Schools](https://www.w3schools.com)
 - The documentation of the projects listed above.

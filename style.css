@@ -35,6 +35,7 @@ body {
 h1 {
     font-family: var(--heading);
     font-size: 1.7rem;
+    text-align: center;
 }
 
 /* Intro paragraph */
@@ -52,12 +53,23 @@ h1 {
 /* Search input */
 #search {
     font-family: var(--heading);
+    margin: 0;
+    list-style: none;
+    font-size: 1.2rem;
+    background: var(--light);
+    color: var(--dark);
+    border: 3px var(--dark) solid;
+    height: 3rem;
 }
+
 
 /* When highlighed, match accent color */
 #search:focus {
     border: 2px var(--color) solid;
 }
+
+
+/* Buttons */
 
 /* Search button */
 #button-search,
@@ -68,7 +80,14 @@ h1 {
     text-transform: uppercase;
 }
 
-/* Buttons */
+/* Container for 'Wish List' and "Visited' buttons */
+#button-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+
 .button {
     color: var(--light);
     height: 3rem;
@@ -98,11 +117,6 @@ h1 {
     box-shadow: none;
 }
 
-/* Container for 'Wish List' and "Visited' buttons */
-#button-container {
-    /* display: flex; */
-    margin: auto;
-}
 
 li {
     list-style: none;
@@ -188,20 +202,13 @@ header {
     padding: 15px;
 }
 
-/* Added the two below to match the phrases look, with border but commented out for now */
-/* .list-group-item {
-  border-left: 3px var(--dark) solid;
-  border-right: 3px var(--dark) solid;
-}
-.list-group-item:nth-of-type(odd) {
-  border-bottom: 3px solid var(--dark);
-  border-top: 3px solid var(--dark);
-} */
+
 
 
 #phrases {
     justify-content: end;
 }
+
 
 /* Title for phrases list */
 #phrase-title,
@@ -213,11 +220,28 @@ header {
     border-bottom: 10px var(--color) solid;
     padding: 0;
     height: 2rem;
+    margin: 0 auto;
+}
+
+#phrase-error {
+  display: flex;
+  justify-content: center;
+  padding:2rem;
+  border: 3px var(--dark) solid;
+  margin: 2rem auto;
+  text-align: center;
+  max-width: 95%;
+}
+
+#phrase-error > h6 {
+  font-weight: 700;
+  margin: 0 auto;
+  border-bottom: 10px var(--color) solid;
 }
 
 /* <li> items in the list containing translated phrases */
 .phrase-item {
-    margin: 0;
+    margin: 0 auto;
     list-style: none;
     font-size: 1.2rem;
     padding: 1rem;
@@ -283,26 +307,22 @@ header {
     height: 5.5rem;
 }
 
-#search {
-    margin: 0;
-    list-style: none;
-    font-size: 1.2rem;
-    background: var(--light);
-    color: var(--dark);
-    border: 3px var(--dark) solid;
-    height: 3rem;
-}
-
 .infoCountry {
     text-align: right;
+}
+
+
+#phrase-title {
+  margin: 0 auto;
 }
 
 #translate-icon {
     width: 5rem;
     margin-block: 0.95rem;
     display: block;
-    margin-left: 3.7rem;
-}
+    /* margin-left: 3.7rem; */
+    margin: 1rem auto;
+  }
 
 .row {
     display: flex;
@@ -331,13 +351,18 @@ header {
         margin-left: -2rem;
     }
 
+    #countryName, #phrase-title {
+      width: fit-content;
+      font-size: 2rem;
+    }
+
     #button-container {
         display: flex;
         justify-content: center;
         margin-right: 2rem;
     }
-
+/* 
     #translate-icon {
         margin-left: 11.2rem;
-    }
+    } */
 }
