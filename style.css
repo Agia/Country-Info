@@ -22,6 +22,7 @@ body {
     color: var(--dark);
 }
 
+
 /* Hero area, including search input / button, header and intro text */
 #hero-search {
     margin: 0 auto;
@@ -136,6 +137,16 @@ header {
 .nav-link:active {
   padding: 10px 5px 5px 10px;
   box-shadow: none;
+}
+
+/* Modal */
+
+.modal-header{
+    font-family: var(--heading);
+}
+
+.close{
+    color: var(--dark);
 }
 
 /* Right side container, on large screens */
