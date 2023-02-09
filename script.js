@@ -28,6 +28,8 @@ let phraseItems = document.querySelector("#phrase-items");
 let visitedCountriesArr = JSON.parse(localStorage.getItem("visited")) || [];
 let wishListArr = JSON.parse(localStorage.getItem("wish")) || [];
 
+
+// * EVENT LISTENERS * //
 // On click on Visited navbar item open a list of saved countries
 visitedNav.addEventListener("click", function() {
 
@@ -55,10 +57,11 @@ visitedNav.addEventListener("click", function() {
 })
 
 //Event Listener to delete Countries
-countryList.addEventListener("click", function(event){
-    event.target.matches("button");
-    console.log("Do something");
-})
+// countryList.addEventListener("click", function(event){
+//     event.target.matches("button");
+//     console.log("Do something");
+// })
+
 
 // Event Listener Wish list  navbar item open a list of saved countries
 wishListNav.addEventListener("click", function() {
@@ -82,7 +85,6 @@ wishListNav.addEventListener("click", function() {
         document.querySelector(".empty-wish").textContent = "You can start your WISH Countries list, how exciting!!"
     }
 });
-
 
 
 //Event Listener when a Country is saved goes to localStorage
@@ -147,13 +149,14 @@ searchButton.addEventListener("click", function (event) {
         return;
     } 
 })
-    
+
+// TODO: Repeated Event Listener
 // Event listeners to clear all previous saved list items. Removes localStorage, HTML and empties the array
-clearButtonVisited.addEventListener("click", function (event) {
-    listContainer.innerHTML = "";
-    localStorage.removeItem("visited");
-    visitedCountriesArr = [];
-})
+// clearButtonVisited.addEventListener("click", function (event) {
+//     listContainer.innerHTML = "";
+//     localStorage.removeItem("visited");
+//     visitedCountriesArr = [];
+// })
 
 
 // Event listeners to clear all previous saved list items. Removes localStorage, HTML and empties the array
@@ -168,6 +171,9 @@ clearButtonWishlist.addEventListener("click", function (event) {
     localStorage.removeItem("wish");
     wishListArr = [];
 })
+
+
+// * FUNCTIONS * //
 
 // Function to be called on page load
 function init() {
