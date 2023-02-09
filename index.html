@@ -1,223 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Country Finder</title>
     <!--Bootstrap-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <!--GoogleFonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet" />
 
     <!--FontAwesome-->
     <link rel="stylesheet" href="style.css" />
-  </head>
+</head>
 
-  <!--Navigation-->
-  <header>
-    <div class="container">
-      <ul class="nav justify-content-end">
-        <li class="nav-item">
-          <a
-            class="nav-link visited"
-            href="#"
-            data-toggle="modal"
-            data-target="#modalCenterVisited"
-            >Visited</a
-          >
-        </li>
-        <li class="nav-item wish-list">
-          <a
-            class="nav-link wish-list"
-            href="#"
-            data-toggle="modal"
-            data-target="#modalCenterWish"
-            >Wish List</a
-          >
-        </li>
-      </ul>
+<!--Navigation-->
+<header>
+    <div class="container" id="navbar-container">
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link visited" href="#" data-toggle="modal" data-target="#modalCenterVisited">Visited</a>
+            </li>
+            <li class="nav-item wish-list">
+                <a class="nav-link wish-list" href="#" data-toggle="modal" data-target="#modalCenterWish">Wish List</a>
+            </li>
+        </ul>
     </div>
 
     <!-- Modal Visited -->
-    <div
-      class="modal fade"
-      id="modalCenterVisited"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modalCenterTitle"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modal-title">Visited Countries</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <ul id="saved-countries-visited" class="empty-visited"></ul>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="button"
-              data-dismiss="modal"
-            >
-              CLOSE
-            </button>
-            <button type="button" class="button" id="clear-visited">
-              CLEAR ALL
-            </button>
-          </div>
+    <div class="modal fade" id="modalCenterVisited" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">Visited Countries</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul id="saved-countries-visited" class="empty-visited"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="button" data-dismiss="modal">
+                        CLOSE
+                    </button>
+                    <button type="button" class="button" id="clear-visited">
+                        CLEAR ALL
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
     <!-- Modal Wishlist-->
 
-    <div
-      class="modal fade"
-      id="modalCenterWish"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modalCenterTitle"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modal-title">Wish List</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <ul id="saved-countries-wishList" class="empty-wish"></ul>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="button"
-              data-dismiss="modal"
-            >
-              CLOSE
-            </button>
-            <button type="button" class="button" id="clear-wishlist">
-              CLEAR ALL
-            </button>
-          </div>
+    <div class="modal fade" id="modalCenterWish" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">Wish List</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul id="saved-countries-wishList" class="empty-wish"></ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="button" data-dismiss="modal">
+                        CLOSE
+                    </button>
+                    <button type="button" class="button" id="clear-wishlist">
+                        CLEAR ALL
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </header>
+</header>
 
-  <body>
+<body>
     <div class="row">
-      <!-- Hero and search input // Left side of large screen -->
-      <div
-        class="container jumbotron jumbotron-fluid col-md-12 col-lg-4"
-        id="hero-search"
-      >
-        <h1 class="display-4">Country Info</h1>
-        <p id="intro-text">
-          Search a country name for useful information about it. Or use the menu
-          above to display your wish list and previously visited countries.
-        </p>
+        <!-- Hero and search input // Left side of large screen -->
+        <div class="container jumbotron jumbotron-fluid col-md-12 col-lg-4" id="hero-search">
+            <h1 class="display-4">Country Info</h1>
+            <p id="intro-text">
+                Search a country name for useful information about it. Or use the menu
+                above to display your wish list and previously visited countries.
+            </p>
 
-        <div class="input-group input-group-lg" id="search-input">
-          <input
-            type="text"
-            class="form-control"
-            id="search"
-            aria-label="Search input"
-            aria-describedby="Search input"
-          />
-          <div class="input-group-prepend">
-            <button type="button" class="btn btn-success" id="button-search">
-              Search
-            </button>
-          </div>
+            <div class="input-group input-group-lg" id="search-input">
+                <input type="text" class="form-control" id="search" aria-label="Search input"
+                    aria-describedby="Search input" />
+                <div class="input-group-prepend">
+                    <button type="button" class="btn btn-success" id="button-search">
+                        Search
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <!-- Container for right side elements (country info) at larger screen sizes -->
-      <div class="col-md-12 col-lg-7" id="info-container">
-        <!--Country information, including phrases / local expressions -->
-        <div class="container row" id="info-row">
-          <!-- Content and structure for country info -->
+        <!-- Container for right side elements (country info) at larger screen sizes -->
+        <div class="col-md-12 col-lg-7" id="info-container">
+            <!--Country information, including phrases / local expressions -->
+            <div class="container row" id="info-row">
+                <!-- Content and structure for country info -->
 
-          <div class="col-md-6" id="country-data">
-            <h2 id="countryName">Country Name</h2>
-            <img id="flag" src="" alt="country flag" />
+                <div class="col-md-6" id="country-data">
+                    <h4 id="countryName">Country Name</h4>
+                    <img id="flag" src="" alt="country flag" />
 
-            <div class="list-group" id="factsContainer">
-              <div href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1 bold">Capital:</h5>
+                    <div class="list-group" id="factsContainer">
+                        <div href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1 bold">Capital:</h5>
+                            </div>
+                            <p class="mb-1 infoCountry" id="capital"></p>
+                        </div>
+
+                        <div href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1 bold">Population:</h5>
+                            </div>
+                            <p class="mb-1 infoCountry" id="population"></p>
+                        </div>
+
+                        <div href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1 bold">Languages:</h5>
+                            </div>
+                            <p class="mb-1 infoCountry" id="languages"></p>
+                        </div>
+
+                        <div href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1 bold">Region:</h5>
+                            </div>
+                            <p class="mb-1 infoCountry" id="region"></p>
+                        </div>
+
+                        <div href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1 bold">Currency:</h5>
+                            </div>
+                            <p class="mb-1 infoCountry" id="currency"></p>
+                        </div>
+                    </div>
                 </div>
-                <p class="mb-1 infoCountry" id="capital"></p>
-              </div>
-
-              <div href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1 bold">Population:</h5>
+                <!-- Local expressions -->
+                <div class="container col-md 5" id="phrases">
+                    <ul>
+                        <li class="phrase-item" id="phrase-title">
+                            <h4>Phrases</h4>
+                        </li>
+                        <li id="phrase-icon">
+                            <img id="translate-icon" src="Sources/2793765.png" alt="translation icon">
+                        </li>
+                        <li id="phrase-error">
+                    <h6>Unsupported Language</h6>
+                </li>
+                <div id="phrase-items">        
+              <li class="phrase-item">
+                <h4 class="translated" id="phrase-one"></h4>
+                <p class="en-phrase">Hello</p>
+              </li>
+              <li class="phrase-item">
+                <h4 class="translated" id="phrase-two"></h4>
+                <p class="en-phrase">Goodbye</p>
+              </li>
+              <li class="phrase-item">
+                <h4 class="translated" id="phrase-three"></h4>
+                <p class="en-phrase">Thank you</p>
+              </li>
+            </div>
+                        <li class="phrase-item">
+                            <h4 class="translated" id="phrase-one"></h4>
+                            <p class="en-phrase">Hello</p>
+                        </li>
+                        <li class="phrase-item">
+                            <h4 class="translated" id="phrase-two"></h4>
+                            <p class="en-phrase">Goodbye</p>
+                        </li>
+                        <li class="phrase-item">
+                            <h4 class="translated" id="phrase-three"></h4>
+                            <p class="en-phrase">Thank you</p>
+                        </li>
+                        <li id="button-container">
+                            <button class="button" id="button-wishlist">Wish List</button>
+                            <button class="button" id="button-visited">Visited</button>
+                        </li>
+                    </ul>
                 </div>
-                <p class="mb-1 infoCountry" id="population"></p>
-              </div>
-
-              <div href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1 bold">Languages:</h5>
-                </div>
-                <p class="mb-1 infoCountry" id="languages"></p>
-              </div>
-
-              <div href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1 bold">Region:</h5>
-                </div>
-                <p class="mb-1 infoCountry" id="region"></p>
-              </div>
-
-              <div href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1 bold">Currency:</h5>
-                </div>
-                <p class="mb-1 infoCountry" id="currency"></p>
-              </div>
             </div>
           </div>
           <!-- Local expressions -->
           <div class="container col-md 5" id="phrases">
             <ul>
               <li class="phrase-item" id="phrase-title">
-                <h4 class="translated">Phrases</h4>
+                  <h4 class="translated">Phrases</h4>
               </li>
-              <!-- <li id="phrase-icon">
-                            <img id= "translate-icon" src="/Sources/2793765.png" alt="translation icon">
-                        </li> !-->
+              <li id="phrase-icon">
+                    <img id="translate-icon" src="Sources/2793765.png" alt="translation icon">
+                </li>
                 <li id="phrase-error">
                     <h6>Unsupported Language</h6>
                 </li>
@@ -242,26 +232,20 @@
             </ul>
           </div>
         </div>
-      </div>
     </div>
 
     <!-- SCRIPTS -->
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script src="./norway.js"></script>
     <script src="./script.js"></script>
-  </body>
+</body>
+
 </html>
