@@ -128,7 +128,7 @@ searchButton.addEventListener("click", function (event) {
     if (searchInput.value !== "") {
         country = searchInput.value.toLowerCase();
         
-        fetch("https://countryapi.io/api/name/" + country + "?apikey=9faUreLJojOnzlUoLLEoVq5QZfM3kHI5UY7kq6xX")
+        fetch("https://countryapi.io/api/name/" + country + "?apikey=cVxGZvnyVFsFMtVxjX96YqD1J7FNqMHabjhZF9Yq")
         .then((response) => response.json())
         .then((data) => {
             
@@ -187,19 +187,21 @@ function capitalizeWord(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+
 // Obtains data from CountryAPI and renders it to the page
 function obtainData(data) {
     for (const [countryCode, countryData] of Object.entries(data)) {
         //Capital
-        let capitalEL = document.getElementById("capital")
-        capitalEL.textContent = countryData.capital
+        let capitalEL = document.getElementById("capital");
+        capitalEL.textContent = countryData.capital;
 
         //Population
-        let populationEL = document.getElementById("population")
-        populationEL.textContent = countryData.population
+        let populationEL = document.getElementById("population");
+        populationEL.textContent = countryData.population;
 
         //LanguagesList
-        let languagesEL = document.getElementById("languages")
+        let languagesEL = document.getElementById("languages");
+
         // Added the below to show content stacking from previous requests
         languagesEL.textContent = "";
         let languageCount = 0;
