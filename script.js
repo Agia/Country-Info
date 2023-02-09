@@ -30,7 +30,7 @@ let wishListArr = JSON.parse(localStorage.getItem("wish")) || [];
 visitedNav.addEventListener("click", function() {
 
     if (visitedCountriesArr.length > 0) {
-//   let listContainer = document.querySelector("#saved-countries-visited");
+
 
       listContainer.innerHTML = "";
 
@@ -42,16 +42,13 @@ visitedNav.addEventListener("click", function() {
         countryList.textContent = visitedCountry;
       }
     } else {
-        document.querySelector(".empty-visited").textContent = "You still don't have any Countries on your list"
+        document.querySelector(".empty-visited").textContent = "What amazing places have you been?!"
     }
 })
 
 // Event Listener Wish list  navbar item open a list of saved countries
 wishListNav.addEventListener("click", function() {
     if (wishListArr.length > 0) {
-
-
-    // let wishListContainer = document.querySelector("#saved-countries-wishList");
 
       wishListContainer.innerHTML = "";
 
@@ -63,7 +60,7 @@ wishListNav.addEventListener("click", function() {
         wishCountryList.textContent = wishCountry; 
       }
     } else {
-        document.querySelector(".empty-wish").textContent = "You still don't have any Countries on your list"
+        document.querySelector(".empty-wish").textContent = "You can start your WISH Countries list, how exciting!!"
     }
 });
 
