@@ -31,19 +31,30 @@ visitedNav.addEventListener("click", function() {
 
     if (visitedCountriesArr.length > 0) {
 
-
       listContainer.innerHTML = "";
 
       for (let i = 0; i < visitedCountriesArr.length; i++) {
         let visitedCountry = visitedCountriesArr[i];
-        let countryList = document.createElement("li");
 
+        let countryList = document.createElement("li");
         listContainer.appendChild(countryList);
         countryList.textContent = visitedCountry;
+
+        let deleteBtn = document.createElement("button")
+        countryList.appendChild(deleteBtn);
+        deleteBtn.setAttribute("class", "button remove-btn")
+        deleteBtn.innerHTML = "X";
+
       }
     } else {
         document.querySelector(".empty-visited").textContent = "What amazing places have you been?!"
     }
+})
+
+//Event Listener to delete Countries
+countryList.addEventListener("click", function(event){
+    event.target.matches("button");
+    console.log("Do something");
 })
 
 // Event Listener Wish list  navbar item open a list of saved countries
@@ -54,15 +65,21 @@ wishListNav.addEventListener("click", function() {
 
       for (let i = 0; i < wishListArr.length; i++) {
         let wishCountry = wishListArr[i];
-        let wishCountryList = document.createElement("li");
 
+        let wishCountryList = document.createElement("li");
         wishListContainer.appendChild(wishCountryList);
         wishCountryList.textContent = wishCountry; 
+
+        let deleteBtnW = document.createElement("button")
+        wishCountryList.appendChild(deleteBtnW);
+        deleteBtnW.setAttribute("class", "button remove-btn")
+        deleteBtnW.innerHTML = "X";
       }
     } else {
         document.querySelector(".empty-wish").textContent = "You can start your WISH Countries list, how exciting!!"
     }
 });
+
 
 
 //Event Listener when a Country is saved goes to localStorage
@@ -80,6 +97,7 @@ saveVisitedBtn.addEventListener("click", function(event){
     }
     
 });
+
 
 saveWishBtn.addEventListener("click", function(event){
     // Prevents default behavior 
