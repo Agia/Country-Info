@@ -1,7 +1,7 @@
 # Country Info
 
 ## Description
-<!-- TODO: Links needs updating when Github Pages is up -->
+<!-- TODO: Links needs updating when repo name is updated -->
 [**View Demo**](https://anawada.github.io/project1/)
 </br>
 </br>
@@ -12,12 +12,12 @@ The app runs in the browser, dynamically updating the HTML and CSS using vanilla
 The app also provides the option, to save entered countries into a 'Wish List', or 'Visited' list, which uses localStorage to persist beyond browser reloads. The user can access their lists at any time using the nav links on the page, which will bring up the relevant list, as a modal, displaying all previous countries saved to that list.
 
 ## Usage
-<!-- TODO: Links needs updating when Github Pages is up -->
+<!-- TODO: Links needs updating when repo name is updated -->
 You can use the app directly via it's Github Pages deployment (found [**here**](https://anawada.github.io/project1/) or by using the `View Demo` link above).
 
 Below is a gif showing the app in use:
-<!-- TODO: UPLOAD SCREENSHOT -->
-![Gif screenshot showing the country info page in use.](screenshot.gif)
+
+![Gif screenshot showing the country info page in use.](./assets/img/screenshot.gif)
 
 ## Collaboration
 
