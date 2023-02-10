@@ -248,7 +248,7 @@ function getTranslations(phrase) {
         method: 'POST',
         headers: {
             'content-type': 'application/x-www-form-urlencoded',
-            'X-RapidAPI-Key': '056b2790e1mshd8bb490ad1003bcp114ba5jsn60210fff2967',
+            'X-RapidAPI-Key': '68d69f4c90msheef8071b48c7b4ep160e3cjsnf624868dd2be' ,
             'X-RapidAPI-Host': 'text-translator2.p.rapidapi.com'
         },
         body: encodedParams
