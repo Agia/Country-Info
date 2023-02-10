@@ -1,8 +1,7 @@
 # Country Info
 
 ## Description
-<!-- TODO: Links needs updating when repo name is updated -->
-[**View Demo**](https://anawada.github.io/project1/)
+[**View Demo**](https://anawada.github.io/CountryInfoApp/)
 </br>
 </br>
 A web app to find interesting details about a given country.
@@ -13,7 +12,7 @@ The app also provides the option to save entered countries into a 'Wish List', o
 
 ## Usage
 <!-- TODO: Links needs updating when repo name is updated -->
-You can use the app directly via it's Github Pages deployment (found [**here**](https://anawada.github.io/project1/) or by using the `View Demo` link above).
+You can use the app directly via it's Github Pages deployment (found [**here**](https://github.com/anawada/CountryInfoApp) or by using the `View Demo` link above).
 
 Below is a gif showing the app in use:
 
