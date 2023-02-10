@@ -13,9 +13,16 @@ The app also provides the option to save entered countries into a 'Wish List', o
 ## Usage
 You can use the app directly via it's Github Pages deployment (found [**here**](https://agia.github.io/Country-Info/) or by using the `View Demo` link above).
 
-Below is a gif showing the app in use:
+**Below is a gif showing the app in use:**
 
 ![Gif screenshot showing the country info page in use.](./assets/img/screenshot.gif)
+
+**Screenshots demonstrating the apps responsiveness, at different sizes:**
+
+![Screenshot of the web app at mobile screen size](https://user-images.githubusercontent.com/9097711/218148836-6219ac15-0c70-43c4-8550-4d4fe3b725bd.png)
+
+
+![Screenshot of the web app at tablet screen size](https://user-images.githubusercontent.com/9097711/218148722-4a446ef6-b5c8-4f85-a87f-f92a494c8b8a.png)
 
 ## Collaboration
 
