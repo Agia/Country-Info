@@ -45,22 +45,11 @@ visitedNav.addEventListener("click", function() {
 
         countryList.textContent = visitedCountry;
 
-        // let deleteBtn = document.createElement("button")
-        // countryList.appendChild(deleteBtn);
-        // deleteBtn.setAttribute("class", "button remove-btn")
-        // deleteBtn.innerHTML = "X";
-
       }
     } else {
         document.querySelector(".empty-visited").textContent = "What amazing places have you been?!"
     }
 })
-
-//Event Listener to delete Countries
-// countryList.addEventListener("click", function(event){
-//     event.target.matches("button");
-//     console.log("Do something");
-// })
 
 
 // Event Listener Wish list  navbar item open a list of saved countries
@@ -75,11 +64,6 @@ wishListNav.addEventListener("click", function() {
         let wishCountryList = document.createElement("li");
         wishListContainer.appendChild(wishCountryList);
         wishCountryList.textContent = wishCountry; 
-
-        // let deleteBtnW = document.createElement("button")
-        // wishCountryList.appendChild(deleteBtnW);
-        // deleteBtnW.setAttribute("class", "button remove-btn")
-        // deleteBtnW.innerHTML = "X";
       }
     } else {
         document.querySelector(".empty-wish").textContent = "You can start your WISH Countries list, how exciting!!"
@@ -149,15 +133,6 @@ searchButton.addEventListener("click", function (event) {
         return;
     } 
 })
-
-// TODO: Repeated Event Listener
-// Event listeners to clear all previous saved list items. Removes localStorage, HTML and empties the array
-// clearButtonVisited.addEventListener("click", function (event) {
-//     listContainer.innerHTML = "";
-//     localStorage.removeItem("visited");
-//     visitedCountriesArr = [];
-// })
-
 
 // Event listeners to clear all previous saved list items. Removes localStorage, HTML and empties the array
 clearButtonVisited.addEventListener("click", function (event) {
