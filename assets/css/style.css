@@ -1,10 +1,8 @@
-/* FONTS */
-/* Font(s) currently using for testing (Alyssa) - Can confirm final fonts / design decisions together later */
+/* * FONTS * */
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Montserrat:wght@400;700&display=swap');
 
-/* VARIABLES */
 
-/* Added some variables to help with using the same colours, etc., and for my use. Feel free to use them or not (Alyssa) */
+/* * VARIABLES * */
 :root {
     /* COLOURS */
     --dark: #242424;
@@ -15,13 +13,67 @@
     --body: "Montserrat"
 }
 
-/* STYLES */
+/* * STYLES * */
 body {
     font-family: var(--body);
     background-color: var(--light);
     color: var(--dark);
 }
 
+/* Nav Styles */
+#navbar-container {
+    max-width: 83.75%;
+    padding-right: 0rem;
+    padding-left: 0rem;
+    margin-right: 10rem;
+    margin-left: 0rem;
+}
+    
+header {
+    margin-bottom: 4rem;
+}
+
+#saved-countries-wishlist li {
+    text-transform: capitalize;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-family: var(--heading);
+    font-size: 1.5rem;
+    color: var(--light);
+    text-transform: uppercase;
+    background-color: var(--color);
+    border: var(--dark) .2px solid;
+    margin-left: 10px;
+    width: 10rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.nav-link:hover {
+    box-shadow: 2px 2px var(--dark);
+    color: var(--light);
+}
+
+.nav-link:active {
+    padding: 10px 5px 5px 10px;
+    box-shadow: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* Modal */
+.modal-header {
+    font-family: var(--heading);
+}
+
+.close {
+    color: var(--dark);
+}
 
 /* Hero area, including search input / button, header and intro text */
 #hero-search {
@@ -63,14 +115,13 @@ h1 {
     height: 3rem;
 }
 
-
 /* When highlighed, match accent color */
 #search:focus {
     border: 2px var(--color) solid;
 }
 
 
-/* Buttons */
+/* ** BUTTONS ** */
 
 /* Search button */
 #button-search,
@@ -87,7 +138,10 @@ h1 {
     justify-content: center;
 }
 
-
+/* Modal Clear All buttons */
+.button-clear {
+    background-color: #dc6e6e;
+}
 
 .button {
     color: var(--light);
@@ -118,65 +172,8 @@ h1 {
     box-shadow: none;
 }
 
-
-li {
-    list-style: none;
-}
-
-/* Space for Nav Styles */
-
-#navbar-container {
-    max-width: 83.75%;
-    padding-right: 0rem;
-    padding-left: 0rem;
-    margin-right: 10rem;
-    margin-left: 0rem;
-}
-    
-header {
-    margin-bottom: 4rem;
-}
-
-#saved-countries-wishlist li {
-    text-transform: capitalize;
-}
-
-.nav-link {
-    text-decoration: none;
-    font-family: var(--heading);
-    font-size: 1.5rem;
-    color: var(--light);
-    text-transform: uppercase;
-    background-color: var(--color);
-    border: var(--dark) .2px solid;
-    margin-left: 10px;
-    width: 10rem;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.nav-link:hover {
-    box-shadow: 2px 2px var(--dark);
-    color: var(--light);
-}
-
-.nav-link:active {
-    padding: 10px 5px 5px 10px;
-    box-shadow: none;
-}
-
-/* Modal */
-
-.modal-header {
-    font-family: var(--heading);
-}
-
-.close {
-    color: var(--dark);
-}
-
+/* * COUNTRY INFO CONTAINER */
 /* Right side container, on large screens */
-
 #info-container {
     margin-top: 7vh;
 }
@@ -195,9 +192,7 @@ header {
     padding: 15px;
 }
 
-
-
-
+/* Translations container */
 #phrases {
     justify-content: end;
 }
@@ -216,6 +211,7 @@ header {
     margin: 0 auto;
 }
 
+/* Container for "Unsupported languages" element */
 #phrase-error {
   display: flex;
   justify-content: center;
@@ -232,7 +228,7 @@ header {
   border-bottom: 10px var(--color) solid;
 }
 
-/* <li> items in the list containing translated phrases */
+/* <li> items containing translated phrases */
 .phrase-item {
     margin: 0 auto;
     list-style: none;
@@ -266,6 +262,7 @@ header {
     margin: 0;
 }
 
+/* TODO: Check if these are still used */
 #countryCard {
     background-color: lightgray;
     border-radius: 20px;
@@ -288,6 +285,7 @@ header {
     border-radius: 15px;
 }
 
+/* Country data elements  */
 .list-group-item-action {
     margin: 0;
     list-style: none;
@@ -304,11 +302,7 @@ header {
     text-align: right;
 }
 
-
-#phrase-title {
-  margin: 0 auto;
-}
-
+/* Icon above translations */
 #translate-icon {
     width: 5rem;
     margin-block: 0.95rem;
@@ -321,14 +315,9 @@ header {
     display: flex;
 }
 
-/* MEDIA QUERIES */
+/* * MEDIA QUERIES * */
 
 @media screen and (max-width: 1000px) {
-
-    /* Initial values, will finalise, and add others, when HTML structure is complete */
-    #hero-search {
-        align-items: center;
-    }
 
     #info-container,
     #phrases {
@@ -354,8 +343,4 @@ header {
         justify-content: center;
         margin-right: 2rem;
     }
-/* 
-    #translate-icon {
-        margin-left: 11.2rem;
-    } */
 }
