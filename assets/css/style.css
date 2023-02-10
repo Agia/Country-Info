@@ -42,6 +42,7 @@ h1 {
 #intro-text {
     max-width: 70vw;
     margin: 1.4rem auto 2.4rem auto;
+    text-align: center;
 }
 
 /* Search input container */
