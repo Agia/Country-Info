@@ -11,18 +11,22 @@ The app runs in the browser, dynamically updating the HTML and CSS using vanilla
 The app also provides the option to save entered countries into a 'Wish List', or 'Visited' list, which uses localStorage to persist beyond browser reloads. The user can access their lists at any time using the nav links on the page, which will bring up the relevant list, as a modal, displaying all previous countries saved to that list. They even have the option to clear the list entirely, and start fresh.
 
 ## Usage
-You can use the app directly via it's Github Pages deployment (found [**here**](https://agia.github.io/Country-Info/) or by using the `View Demo` link above).
+You can use the app directly via it's Github Pages deployment (found [**here**](https://agia.github.io/Country-Info/) or by using the `**View Demo**` link above).
 
-**Below is a gif showing the app in use:**
+### Screenshots
+
+#### Gif showing the app in use
 
 ![Gif screenshot showing the country info page in use.](./assets/img/screenshot.gif)
 
-**Screenshots demonstrating the apps responsiveness, at different sizes:**
 
+#### Mobile viewport
 ![Screenshot of the web app at mobile screen size](https://user-images.githubusercontent.com/9097711/218148836-6219ac15-0c70-43c4-8550-4d4fe3b725bd.png)
 
 
+#### Tablet viewport
 ![Screenshot of the web app at tablet screen size](https://user-images.githubusercontent.com/9097711/218148722-4a446ef6-b5c8-4f85-a87f-f92a494c8b8a.png)
+
 
 ## Collaboration
 
